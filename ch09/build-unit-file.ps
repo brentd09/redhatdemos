@@ -1,25 +1,28 @@
 #!/bin/bash
 
-echo '[Unit]' > /etc/systemd/system/myscript.service
-echo 'Description=My bash script service' >> /etc/systemd/system/myscript.service
-echo 'After=network.target' >> /etc/systemd/system/myscript.service
-echo '' >> /etc/systemd/system/myscript.service
-echo '[Service]' >> /etc/systemd/system/myscript.service
-echo 'Type=simple' >> /etc/systemd/system/myscript.service
-echo 'ExecStart=/usr/bin/myscript.sh' >> /etc/systemd/system/myscript.service
-echo 'ExecStop=/bin/kill -s TERM $MAINPID' >> /etc/systemd/system/myscript.service
-echo 'Restart=on-failure' >> /etc/systemd/system/myscript.service
-echo 'User=root' >> /etc/systemd/system/myscript.service
-echo 'Group=root' >> /etc/systemd/system/myscript.servicetem/myscript.service
-echo '' >> /etc/systemd/sys
-echo '[Install]' >> /etc/systemd/system/myscript.service
-echo 'WantedBy=multi-user.target' >> /etc/systemd/system/myscript.service
+cat << EOF1 > /etc/systemd/system/myscript.service
+[Unit]' > 
+Description=My bash script service
+After=network.target
 
-echo '#!/bin/bash' > /usr/bin/myscript.sh
-echo 'while true; do' >> /usr/bin/myscript.sh
-echo '  echo -n "$(date +%T) " >> /usr/tmp/service.log' >> /usr/bin/myscript.sh
-echo '  sleep 2' >> /usr/bin/myscript.sh
-echo 'done' >> /usr/bin/myscript.sh
+[Service]
+Type=simple
+ExecStart=/usr/bin/myscript.sh
+ExecStop=/bin/kill -s TERM $MAINPID
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+EOF1
+
+cat << EOF2 > /usr/bin/myscript.sh
+#!/bin/bash
+while true; do
+  echo -n "$(date +%T) " >> /usr/tmp/service.log
+  sleep 2
+done
 
 chmod 777 /usr/bin/myscript.sh
 systemctl daemon-reload
