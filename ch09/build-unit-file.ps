@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Set up the UNIT FILE
 cat << EOF1 > /etc/systemd/system/myscript.service
 [Unit]' > 
 Description=My bash script service
@@ -17,6 +18,8 @@ Group=root
 WantedBy=multi-user.target
 EOF1
 
+
+# Set up the script for the UNIT FILE
 cat << EOF2 > /usr/bin/myscript.sh
 #!/bin/bash
 while true; do
