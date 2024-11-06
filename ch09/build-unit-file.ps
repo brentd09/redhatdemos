@@ -23,6 +23,7 @@ while true; do
   echo -n "$(date +%T) " >> /usr/tmp/service.log
   sleep 2
 done
+EOF2
 
 chmod 777 /usr/bin/myscript.sh
 systemctl daemon-reload
