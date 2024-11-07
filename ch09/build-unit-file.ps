@@ -2,7 +2,7 @@
 
 # Set up the UNIT FILE
 cat << EOF1 > /etc/systemd/system/myscript.service
-[Unit]' > 
+[Unit]
 Description=My bash script service
 After=network.target
 
@@ -23,7 +23,7 @@ EOF1
 cat << EOF2 > /usr/bin/myscript.sh
 #!/bin/bash
 while true; do
-  echo -n "$(date +%T) " >> /usr/tmp/service.log
+  echo -n "\$(date +%T) " >> /usr/tmp/service.log
   sleep 2
 done
 EOF2
