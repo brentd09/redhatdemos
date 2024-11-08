@@ -5,12 +5,15 @@ usage() {
   exit 1
 }
 
-if [ $# -ne 1  ]; then 
+if [ $# -ne 1  ]; then
   usage
 fi
 
-case "$1" in 
-  --install|--Install)
+option_lc=${1,,}
+
+case "$option" in
+  "--install" )
+  echo "INSTALL"
 # Set up the UNIT FILE
 cat << EOF1 > /etc/systemd/system/myscript.service
 [Unit]
@@ -41,15 +44,16 @@ EOF2
 
 chmod 777 /usr/bin/myscript.sh
 ;;
-  --remove|--Remove)
+  "--remove" )
+  echo 'REMOVE'
     status=$(systemctl status myscript.service &> /dev/null )
-    if [ $? -eq 0 ]; then 
+    if [ $? -eq 0 ]; then
       systemctl disable --now myscript.service &> /dev/null
       rm -f /etc/systemd/system/myscript.service &> /dev/null
       rm -f /usr/bin/myscript.sh &> /dev/null
       rm -f /usr/tmp/service.log
     fi
-;;  
+;;
 esac
 
 systemctl daemon-reload
