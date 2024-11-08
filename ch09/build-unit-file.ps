@@ -11,9 +11,8 @@ fi
 
 option_lc=${1,,}
 
-case "$option" in
+case "$option_lc" in
   "--install" )
-  echo "INSTALL"
 # Set up the UNIT FILE
 cat << EOF1 > /etc/systemd/system/myscript.service
 [Unit]
@@ -45,7 +44,6 @@ EOF2
 chmod 777 /usr/bin/myscript.sh
 ;;
   "--remove" )
-  echo 'REMOVE'
     status=$(systemctl status myscript.service &> /dev/null )
     if [ $? -eq 0 ]; then
       systemctl disable --now myscript.service &> /dev/null
