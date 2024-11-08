@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage() {
-  echo "Usage: $0 [--install|--remove]"
+  echo "Usage: $0 [ --install | --remove ]"
   exit 1
 }
 
@@ -54,4 +54,6 @@ chmod 777 /usr/bin/myscript.sh
 ;;
 esac
 
+sleep 10
+systemctl daemon-reload
 systemctl daemon-reload
