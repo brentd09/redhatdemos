@@ -57,3 +57,6 @@ esac
 sleep 10
 systemctl daemon-reload
 systemctl daemon-reload
+echo 'Check out the following files:'
+echo '/etc/systemd/system/myscript.service'
+echo '/usr/bin/myscript.sh'
