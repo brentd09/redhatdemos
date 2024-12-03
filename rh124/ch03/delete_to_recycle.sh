@@ -11,5 +11,5 @@ delfile() {
     echo "Error: $1 does not exist"
     return 2
   fi
-  mv -f $1 ~/Deleted
+  mv -f $1 ~/.Deleted/
 }
