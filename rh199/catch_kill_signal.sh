@@ -3,7 +3,7 @@
 # Function to handle the termination signal
 cleanup() {
   # Sending the message to STD_OUT Channel
-  echo "Caught termination signal. Exiting..." >&2
+  echo "Brent's custom termination signal message. Exiting Process Nicely ..." >&2
   exit 0
 }
 
