@@ -13,12 +13,17 @@ if [[ $hostnm =~ servera ]]; then
   DISK="/dev/vdb"
 
   # Start parted and input commands automatically
-  parted $DISK --script << EOF
-  mklabel gpt               # Create a new GPT partition table
-  mkpart primary ext4 1MiB 100MiB   # Create a primary partition
-  mkpart primary ext4 100MiB 100%    # Create another primary partition
-  quit                       # Exit parted
-  EOF
+  #!/bin/bash
+  # Automate partitioning of using parted
+  # Create a GPT partition table
+  parted $DISK --script mklabel gpt
+  # Create the first partition of 500 MB
+  parted $DISK --script mkpart primary ext4 0% 500MB
+  # Create the second partition with the remaining space
+  parted $DISK --script mkpart primary ext4 500MB 100%
+  # Print the partition table to verify
+  parted $DISK --script print
+  echo "Partitions created on $DISK."
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
