@@ -1,4 +1,4 @@
-$!/bin.bash
+#!/bin/bash
 
 echo "Hello, this is a demo script"
 if [[ true ]];then 
