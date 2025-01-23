@@ -1,0 +1,54 @@
+Title: The Art of Baking a Classic Vanilla Cake
+
+  # i - insert mode
+  # fix the next line changing "kozy citchen" to "cozy kitchen"
+  # ESC - Command mode
+Imagine yourself in a kozy citchen, the scent of vanilla wafting through the air. It's a beautiful day to bake a cake, a simple yet delightful treat that brings joy to any occasion. With a few basic ingredients, you can create something spectacular.
+
+  # dw - delete word
+  # delete the word "Begin" from the next line
+  # u - undo last change
+  # ESC - Command mode
+Begin by setting the scene: the oven is preheating to 350°F (175°C), patiently waiting to transform your preparation into a golden masterpiece. In the meantime, you tenderly prepare your cake pan. A gentle coating of grease and a dusting of flour or a neatly cut piece of parchment ensure your cake’s effortless release after baking.
+
+  # x - delete character
+  # 4x - delete 4 characters
+  # delete the word "begins " from the next line using the <number>x command use 7x (this will also delete the training space) 
+  # ESC - Command mode
+The magic begins with the dry ingredients. In a medium bowl, you whisk together flour and baking powder, creating a blend that will later provide structure and lift. These are set aside, waiting to meet the creamy mixture.
+
+  # :q! - quit without saving
+  # After executing this command re-open this file in vim
+
+
+  # w <filename> - write file to the chosen filename
+  # w vim_demo.txt
+  # ESC - Command mode
+In a spacious bowl, softened butter awaits the sugar. As you beat them together, they transform, becoming light and fluffy, almost cloud-like in texture. This process is crucial, setting the foundation for a perfect cake. Next, the eggs are introduced, one at a time. Each addition is mixed thoroughly, followed by a fragrant splash of vanilla, infusing the batter with warmth and sweetness.
+
+  # yw - copy(yank) a word into the paste buffer
+  # p - paste after current position
+  # P - paste before current position
+  # yank the word "Carefully" and paste it after the same word twice, so it reads "Carefully Carefully Carefully, you alternate ...." 
+  # ESC - Command mode
+Now, it's time for the ingredients to unite. Carefully, you alternate adding the dry mixture and milk to the butter mixture, starting and ending with the dry ingredients. This method creates a smooth, harmonious batter. With each turn of the spoon or mixer, you're one step closer to culinary artistry.
+
+  # yy - copy(yank) entire line into the paste buffer
+  # p - paste after current line
+  # P - paste before current line
+  # duplicate the next line 3 times
+  # ESC - Command mode
+Pour this mix into the awaiting cake pan, smoothing the top with gentle strokes. The batter’s journey continues in the oven, where it will bake for 30 to 35 minutes. As it bakes, the kitchen fills with a comforting aroma, hinting at the deliciousness to come.
+
+  # v - Character visual block mode
+  # using the v command and left and right arrows and the DEL key remove the sentence "Ten minutes in the pan, followed by a gentle transfer to a wire rack, where it cools completely."
+  # ESC - Command mode
+Once baked to perfection, the cake is allowed to rest. Ten minutes in the pan, followed by a gentle transfer to a wire rack, where it cools completely. This step ensures the cake settles and retains its shape.
+
+  # Shift-v - line visual block mode
+  # using this command block this next line and using DEL delete it
+  # ESC - Command mode
+As the final act, consider your serving style. Perhaps a generous layer of frosting to adorn the top, or a simple sprinkle of powdered sugar to highlight its natural beauty. However you choose to finish your creation, it’s sure to delight both the eyes and the palate.
+  
+Prepare to slice into the tender layers, serving up smiles and contentment with each piece of this classic vanilla cake.
+  # :wq - write file to disk and quit
