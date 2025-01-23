@@ -13,7 +13,8 @@ Begin by setting the scene: the oven is preheating to 350°F (175°C), patiently
 
   # x - delete character
   # 4x - delete 4 characters
-  # delete the word "begins " from the next line using the <number>x command use 7x (this will also delete the training space) 
+  # delete the word "begins " from the next line using the <number>x command use 7x 
+  #   (this will also delete the training space) 
   # ESC - Command mode
 The magic begins with the dry ingredients. In a medium bowl, you whisk together flour and baking powder, creating a blend that will later provide structure and lift. These are set aside, waiting to meet the creamy mixture.
 
@@ -29,7 +30,9 @@ In a spacious bowl, softened butter awaits the sugar. As you beat them together,
   # yw - copy(yank) a word into the paste buffer
   # p - paste after current position
   # P - paste before current position
-  # yank the word " Carefully" and paste it after the same word twice, so it reads "CarefullyCarefullyCarefully, you alternate ....", (Hint: move to the y in "carefully" before pasting)
+  # yank the word " Carefully" and paste it after the same word twice, 
+  #   so it reads "CarefullyCarefullyCarefully, you alternate ....", 
+  #   (Hint: move to the y in "carefully" before pasting)
   # ESC - Command mode (not required as the vim commands do not permanently leave command mode)
 Now, it's time for the ingredients to unite. Carefully, you alternate adding the dry mixture and milk to the butter mixture, starting and ending with the dry ingredients. This method creates a smooth, harmonious batter. With each turn of the spoon or mixer, you're one step closer to culinary artistry.
 
@@ -41,7 +44,8 @@ Now, it's time for the ingredients to unite. Carefully, you alternate adding the
 Pour this mix into the awaiting cake pan, smoothing the top with gentle strokes. The batter’s journey continues in the oven, where it will bake for 30 to 35 minutes. As it bakes, the kitchen fills with a comforting aroma, hinting at the deliciousness to come.
 
   # v - Character visual block mode
-  # using the v command and left and right arrows and the DEL key remove the sentence "Ten minutes in the pan, followed by a gentle transfer to a wire rack, where it cools completely."
+  # using the v command and left and right arrows and the DEL key remove the sentence 
+  #  "Ten minutes in the pan, followed by a gentle transfer to a wire rack, where it cools completely."
   # ESC - Command mode
 Once baked to perfection, the cake is allowed to rest. Ten minutes in the pan, followed by a gentle transfer to a wire rack, where it cools completely. This step ensures the cake settles and retains its shape.
 
