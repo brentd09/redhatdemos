@@ -5,15 +5,16 @@ if [[ ! -f ./linux_benefits.txt ]];then
   exit 1
 fi
 
-echo 'grep re. ./linux_benefits.txt'
-echo '-----------------------------'
+echo -e "\e[31mgrep re. ./linux_benefits.txt\e[0m"
+echo -e "\e[31m-----------------------------\e[0m"
 grep --color=auto re. ./linux_benefits.txt
 echo ''
-echo 'grep re\. ./linux_benefits.txt'
-echo '-----------------------------'
+echo -e "\e[31mgrep re\. ./linux_benefits.txt\e[0m"
+echo -e "\e[31m-----------------------------\e[0m"
 grep --color=auto re\. ./linux_benefits.txt
 echo ''
-echo "grep 're\.' ./linux_benefits.txt"
-echo '-----------------------------'
+echo -e "\e[31mgrep 're\.' ./linux_benefits.txt\e[0m"
+echo -e "\e[31m-----------------------------\e[0m"
 grep --color=auto 're\.' ./linux_benefits.txt
 
+echo -e "\e[31mThis text is red!\e[0m"
