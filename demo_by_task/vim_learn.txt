@@ -1,14 +1,14 @@
 Title: The Art of Baking a Classic Vanilla Cake
 
   # i - insert mode
-  # fix the next line changing "kozy citchen" to "cozy kitchen"
+  # using insert mode and the DEL or BACKSPACE keys, fix the next line changing "kozy citchen" to "cozy kitchen"
   # ESC - Command mode
 Imagine yourself in a kozy citchen, the scent of vanilla wafting through the air. It's a beautiful day to bake a cake, a simple yet delightful treat that brings joy to any occasion. With a few basic ingredients, you can create something spectacular.
 
   # dw - delete word
   # delete the word "Begin" from the next line
   # u - undo last change
-  # ESC - Command mode
+  # ESC - Command mode (this is not needed here as the vim commands never permanently left command mode)
 Begin by setting the scene: the oven is preheating to 350°F (175°C), patiently waiting to transform your preparation into a golden masterpiece. In the meantime, you tenderly prepare your cake pan. A gentle coating of grease and a dusting of flour or a neatly cut piece of parchment ensure your cake’s effortless release after baking.
 
   # x - delete character
@@ -21,16 +21,16 @@ The magic begins with the dry ingredients. In a medium bowl, you whisk together 
   # After executing this command re-open this file in vim
 
 
-  # w <filename> - write file to the chosen filename
-  # w vim_demo.txt
-  # ESC - Command mode
+  # :w <filename> - write file to the chosen filename
+  # :w vim_demo.txt
+  # ESC - Command mode (not required as the vim commands did not leave command mode)
 In a spacious bowl, softened butter awaits the sugar. As you beat them together, they transform, becoming light and fluffy, almost cloud-like in texture. This process is crucial, setting the foundation for a perfect cake. Next, the eggs are introduced, one at a time. Each addition is mixed thoroughly, followed by a fragrant splash of vanilla, infusing the batter with warmth and sweetness.
 
   # yw - copy(yank) a word into the paste buffer
   # p - paste after current position
   # P - paste before current position
-  # yank the word "Carefully" and paste it after the same word twice, so it reads "Carefully Carefully Carefully, you alternate ...." 
-  # ESC - Command mode
+  # yank the word " Carefully" and paste it after the same word twice, so it reads "CarefullyCarefullyCarefully, you alternate ....", (Hint: move to the y in "carefully" before pasting)
+  # ESC - Command mode (not required as the vim commands do not permanently leave command mode)
 Now, it's time for the ingredients to unite. Carefully, you alternate adding the dry mixture and milk to the butter mixture, starting and ending with the dry ingredients. This method creates a smooth, harmonious batter. With each turn of the spoon or mixer, you're one step closer to culinary artistry.
 
   # yy - copy(yank) entire line into the paste buffer
