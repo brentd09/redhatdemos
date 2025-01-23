@@ -8,3 +8,12 @@ fi
 echo 'grep re. ./linux_benefits.txt'
 echo '-----------------------------'
 grep --color=auto re. ./linux_benefits.txt
+echo ''
+echo 'grep re\. ./linux_benefits.txt'
+echo '-----------------------------'
+grep --color=auto re\. ./linux_benefits.txt
+echo ''
+echo 'grep 're\.' ./linux_benefits.txt'
+echo '-----------------------------'
+grep --color=auto 're\.' ./linux_benefits.txt
+
