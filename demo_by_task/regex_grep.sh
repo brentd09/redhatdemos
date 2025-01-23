@@ -7,4 +7,4 @@ fi
 
 echo 'grep re. ./linux_benefits.txt'
 echo '-----------------------------'
-grep re. ./linux_benefits.txt
+grep --color=auto re. ./linux_benefits.txt
