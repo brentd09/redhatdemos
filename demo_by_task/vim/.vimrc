@@ -1,7 +1,8 @@
 " Set the number of spaces for indentation
 set tabstop=2       " Number of spaces that a <Tab> counts for
 set softtabstop=2   " Number of spaces a <Tab> counts when editing
-set shiftwidth=2     " Number of spaces to use for each step of (auto)indent
+set shiftwidth=2    " Number of spaces to use for each step of (auto)indent
+set nu              " Show line numbers  
 
 " Use spaces instead of tabs
 set expandtab        " Convert tabs to spaces
