@@ -46,12 +46,12 @@ Pour this mix into the awaiting cake pan, smoothing the top with gentle strokes.
   # v - Character visual block mode
   # using the v command and left and right arrows and the DEL key remove the sentence 
   #  "Ten minutes in the pan, followed by a gentle transfer to a wire rack, where it cools completely."
-  # ESC - Command mode
+  # ESC - Command mode - While the v command leaves command mode, the DEL key has exited visual mode, so ESC is not needed 
 Once baked to perfection, the cake is allowed to rest. Ten minutes in the pan, followed by a gentle transfer to a wire rack, where it cools completely. This step ensures the cake settles and retains its shape.
 
   # Shift-v - line visual block mode
   # using this command block this next line and using DEL delete it
-  # ESC - Command mode
+  # ESC - Command mode - While the SHIFT-v command leaves command mode, the DEL key has exited visual mode, so ESC is not needed
 As the final act, consider your serving style. Perhaps a generous layer of frosting to adorn the top, or a simple sprinkle of powdered sugar to highlight its natural beauty. However you choose to finish your creation, it’s sure to delight both the eyes and the palate.
   
 Prepare to slice into the tender layers, serving up smiles and contentment with each piece of this classic vanilla cake.
