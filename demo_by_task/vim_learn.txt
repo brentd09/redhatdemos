@@ -56,3 +56,15 @@ As the final act, consider your serving style. Perhaps a generous layer of frost
   
 Prepare to slice into the tender layers, serving up smiles and contentment with each piece of this classic vanilla cake.
   # :wq - write file to disk and quit
+
+  # OTHER COMMANDS that can be very useful
+  # a  - append after the current character
+  # o  - open line below current line
+  # O  - open line above current line
+  # cw - change word
+  # dd - delete line
+
+  # Extended commands (set nu / set nonu) - "no" as prefix turns the feature off
+  # :set nu       - display line numbers
+  # :%s/old/new/g - search and replace
+  # :set wrap     - line wrapping on
