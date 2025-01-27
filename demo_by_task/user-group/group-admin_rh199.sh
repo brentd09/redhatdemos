@@ -18,13 +18,3 @@ echo groupmod -g 1100 demogroup2
 read -sp '' promptvar
 sudo groupmod -g 1100 demogroup2
 echo ''
-
-echo Swap a supplimentary group to the primary group
-echo id 
-id
-echo newgrp wheel student 
-read -sp '' promptvar
-expr $(newgrp wheel student)
-echo id 
-id
-echo ''
