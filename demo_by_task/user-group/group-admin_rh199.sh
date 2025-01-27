@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo Add new group
-echo useradd demogroup1
+echo groupadd demogroup1
 read -sp '' promptvar
-sudo useradd demogroup1
+sudo groupadd demogroup1
 echo ''
 
 # groupmod does not allow group membership changes just Group Nme and GID changes
