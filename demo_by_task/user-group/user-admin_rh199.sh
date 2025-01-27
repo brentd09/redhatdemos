@@ -35,4 +35,5 @@ echo ''
 echo chage -m 2 -M 40 -I 3 -W 7 -E '2027-12-30' demouser1
 read -sp '' promptvar
 sudo chage -m 2 -M 40 -I 3 -W 7 -E '2027-12-30' demouser1
+sudo chage -l demouser1
 echo ''
