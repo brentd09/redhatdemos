@@ -37,3 +37,18 @@ read -sp '' promptvar
 sudo chage -m 2 -M 40 -I 3 -W 7 -E '2027-12-30' demouser1
 sudo chage -l demouser1
 echo ''
+
+echo Force password change on next login
+echo chage -d 0 demouser1
+read -sp '' promptvar
+sudo chage -d 0 demouser1
+echo ''
+
+echo Lock user account
+echo passwd -l demouser1 or
+echo usermod -L demouser1
+read -sp '' promptvar
+sudo usermod -L demouser1
+echo ''
+
+
