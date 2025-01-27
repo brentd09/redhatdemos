@@ -1,7 +1,4 @@
 cd ~
-sudo -i
+sudo -u devops mkdir devops-directory
 
-su devops
-mkdir devops-directory
-exit
 ls -ld devops-directory
