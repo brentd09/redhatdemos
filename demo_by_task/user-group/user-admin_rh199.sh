@@ -52,4 +52,8 @@ read -sp '' promptvar
 sudo usermod -L demouser1
 echo ''
 
-
+echo List the default login settings
+echo less /etc/login.defs
+read -sp '' promptvar
+less /etc/login.defs
+echo ''
