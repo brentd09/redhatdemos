@@ -25,3 +25,11 @@ echo ''
 echo cat /etc/shadow
 cat /etc/shadow
 echo ''
+
+echo getent passwd
+getent passwd
+echo ''
+
+echo getent group
+getent group
+echo ''
