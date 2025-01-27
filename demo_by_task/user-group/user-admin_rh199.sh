@@ -44,6 +44,7 @@ read -sp '' promptvar
 sudo chage -d 0 demouser1
 echo ''
 
+# These two methods do the same thing, they place an ! at the start of the password hash in the /etc/shadow file
 echo Lock user account
 echo passwd -l demouser1 or
 echo usermod -L demouser1
