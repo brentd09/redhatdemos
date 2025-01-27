@@ -22,9 +22,9 @@ echo ''
 echo Swap a supplimentary group to the primary group
 echo id 
 id
-echo newgrp -g wheel student 
+echo newgrp wheel student 
 read -sp '' promptvar
-sudo newgrp -g wheel student
+sudo newgrp wheel student
 echo id 
 id
 echo ''
