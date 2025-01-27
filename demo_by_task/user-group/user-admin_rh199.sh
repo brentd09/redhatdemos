@@ -2,22 +2,22 @@
 
 echo useradd demouser1
 sudo useradd demouser1
-read -sp promptvar
+read -sp '' promptvar
 
 echo Add user to the wheel group
 echo usermod -aG wheel demouser1
 sudo usermod -aG wheel demouser1
-read -sp promptvar
+read -sp '' promptvar
 
 echo Determine which groups a user is a member of
 echo id demouser1
 id demouser1
-read -sp promptvar
+read -sp '' promptvar
 
 echo Check user account settings
 echo chage -l demouser1
 sudo chage -l demouser1
-read -sp promptvar
+read -sp '' promptvar
 
 echo Configure 
 echo Max Password Age: 40 days
