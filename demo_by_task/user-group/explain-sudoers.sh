@@ -1,5 +1,5 @@
 echo 'In the /etc/sudoers file we see different configurations'
-echo 'This is wha the configuration means'
+echo 'This is what the /etc/sudoers configuration means'
 echo ''
 echo 'User assignment'
 echo 'user1     ALL=(ALL:ALL) ALL'
