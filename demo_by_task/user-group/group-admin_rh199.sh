@@ -24,7 +24,7 @@ echo id
 id
 echo newgrp wheel student 
 read -sp '' promptvar
-newgrp wheel student
+expr $(newgrp wheel student)
 echo id 
 id
 echo ''
