@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo Add new user 
 echo useradd demouser1
 read -sp '' promptvar
 sudo useradd demouser1
@@ -25,7 +26,7 @@ sudo chage -l demouser1
 echo ''
 
 
-echo Configure 
+echo Configure User Account Settings
 echo Max Password Age: 40 days
 echo Min Days Before Password Changes: 2 days
 echo After Password Expires, Number of Days Before Account Lockout: 3 Days
