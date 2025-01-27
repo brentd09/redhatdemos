@@ -16,4 +16,15 @@ echo ''
 
 echo Check user account settings
 echo chage -l testuser1
-chage -l testuser1
+sudo chage -l testuser1
+echo ''
+
+echo Configure 
+echo Max Password Age: 40 days
+echo Min Days Before Password Changes: 2 days
+echo After Password Expires, Number of Days Before Account Lockout: 3 Days
+echo Number of Days Before Expiry That Warnings Start: 7 days
+echo Date When Account Will be Disabled: 2027-12-30
+echo ''
+echo chage -m 2 -M 40 -I 3 -W 7 -E '2027-12-30' testuser1
+sudo chage -m 2 -M 40 -I 3 -W 7 -E '2027-12-30' testuser1
