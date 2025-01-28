@@ -45,7 +45,7 @@ echo ''
 
 echo What policy is in place that is causing the violation
 echo What selinux label is on the Apache web server process
-echo ps -efZ | grep httpd
+echo 'ps -efZ | grep httpd'
 read -sp '' promptvar
 ps -efZ | grep httpd
 echo httpd_t is the label for the web server process
