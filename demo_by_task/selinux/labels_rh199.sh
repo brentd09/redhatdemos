@@ -2,6 +2,7 @@ echo Show selinux label on filesystem objects
 touch ~/demofile.txt
 echo ls -Z ~/demofile.txt
 read -sp '' promptvar
+ls -Z ~/demofile.txt
 echo ''
 
 echo Make selinux permissive
