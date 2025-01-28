@@ -9,5 +9,6 @@ echo ''
 echo Set selinux enforcement
 echo setenforce permissive
 read -sp '' promptvar
-setenforce permissive
+sudo setenforce permissive
+getenforce
 echo ''
