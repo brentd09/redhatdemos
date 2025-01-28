@@ -1,6 +1,6 @@
 echo Show selinux label on filesystem objects
 touch ~/demofile.txt
-echo ls -Z 
+echo ls -Z ~/demofile.txt
 read -sp '' promptvar
 sudo setenforce permissive
 getenforce
