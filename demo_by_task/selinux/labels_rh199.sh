@@ -22,16 +22,20 @@ sudo setenforce 1
 echo dnf -y install httpd 
 read -sp '' promptvar
 sudo dnf -y install httpd
+echo ''
+echo Enable and start the Apache web server
 echo systemctl enable --now httpd
 read -sp '' promptvar
 sudo systemctl enable --now httpd
 echo echo \"This is a demo web site\" > ~/index.html 
-read -sp '' promptvar
 sudo echo "This is a demo web site" > ~/index.html
+echo ''
+echo Moving index.html from home dir to web server dir
 echo mv ~/index.html /var/www/html
 read -sp '' promptvar
 sudo mv ~/index.html /var/www/html
-echo Curl to the Apache web site
+echo ''
+echo Access the Apache web site
 echo curl localhost
 read -sp '' promptvar
 curl localhost
@@ -43,7 +47,6 @@ read -sp '' promptvar
 sudo ausearch -m avc | tail -n 1
 echo ''
 
-echo What policy is in place that is causing the violation
 echo What selinux label is on the Apache web server process
 echo 'ps -efZ | grep httpd'
 read -sp '' promptvar
@@ -57,6 +60,7 @@ read -sp '' promptvar
 grep '/var/www' /etc/selinux/targeted/contexts/files/file_contexts
 echo The label for the files in the www directory should be httpd_sys_content_t
 echo ''
+
 echo Search for selinux policies that control httpd process access
 echo "sesearch --allow | grep 'allow httpd_t httpd_sys_content_t'"
 read -sp '' promptvar
