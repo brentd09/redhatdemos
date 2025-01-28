@@ -6,9 +6,9 @@ ls -Z ~/demofile.txt
 echo ''
 
 echo Installing selinux tools
-echo sudo dnf install -y setools-console setools
+echo sudo dnf install -y setools-console setools setroubleshoot-server
 read -sp '' promptvar
-sudo dnf install -y setools-console setools
+sudo dnf install -y setools-console setools setroubleshoot-server
 echo ''
 
 echo Make selinux permissive
