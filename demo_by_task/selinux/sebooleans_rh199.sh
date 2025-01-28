@@ -37,7 +37,7 @@ echo ''
 echo Edit the httpd userdir.conf to enable home dir access
 echo "vim -c '%s/UserDir disabled/#UserDir disabled/g' -c '%s/#UserDir public_html/UserDir public_html/g' -c 'wq' /etc/httpd/conf.d/userdir.conf"
 read -sp '' promptvar
-vim -c '%s/UserDir disabled/#UserDir disabled/g' -c '%s/#UserDir public_html/UserDir public_html/g' -c 'wq' /etc/httpd/conf.d/userdir.conf
+sudo vim -c '%s/UserDir disabled/#UserDir disabled/g' -c '%s/#UserDir public_html/UserDir public_html/g' -c 'wq' /etc/httpd/conf.d/userdir.conf
 echo ''
 
 echo Changing the permisions on the home dir 
