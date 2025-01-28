@@ -15,7 +15,7 @@ echo ''
 
 echo Try to access home web page
 echo "curl localhost/~/index.html"
-curl localhost/~/index.html
+curl localhost/~student/
 echo ''
 
 echo Check selinux booleans
@@ -40,5 +40,13 @@ read -sp '' promptvar
 sudo vim -c '%s/UserDir disabled/#UserDir disabled/g' -c '%s/#UserDir public_html/UserDir public_html/g' -c 'wq' /etc/httpd/conf.d/userdir.conf
 echo ''
 
+echo Restaring the Apache web server
+echo sudo systemctl restart httpd
+sudo systemctl restart httpd
+
 echo Changing the permisions on the home dir 
 sudo chmod 711 ~
+echo ''
+
+echo Try the home dir website again
+curl localhost/~student/
