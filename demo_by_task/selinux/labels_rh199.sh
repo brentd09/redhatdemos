@@ -7,6 +7,7 @@ getenforce
 echo ''
 
 echo Install Apache website and setup a file with the wrong label as index.html
+sudo setenforce 1
 echo dnf -y install httpd 
 read -sp '' promptvar
 sudo dnf -y install httpd
