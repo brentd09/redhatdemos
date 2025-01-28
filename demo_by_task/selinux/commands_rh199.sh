@@ -6,9 +6,16 @@ read -sp '' promptvar
 getenforce
 echo ''
 
-echo Set selinux enforcement
+echo Set selinux enforcement to permissive
 echo setenforce permissive
 read -sp '' promptvar
 sudo setenforce permissive
+getenforce
+echo ''
+
+echo Set selinux enforcement to enforcing
+echo setenforce enforcing
+read -sp '' promptvar
+sudo setenforce enforcing
 getenforce
 echo ''
