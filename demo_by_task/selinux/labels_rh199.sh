@@ -6,8 +6,14 @@ ls -Z ~/demofile.txt
 echo ''
 
 echo Make selinux permissive
-echo setenforce permissive
-sudo setenforce permissive
+echo setenforce 0
+sudo setenforce 0
+getenforce
+echo ''
+
+echo Make selinux enforcing
+echo setenforce 1
+sudo setenforce 1
 getenforce
 echo ''
 
