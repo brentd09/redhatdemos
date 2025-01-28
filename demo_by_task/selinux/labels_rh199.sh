@@ -68,3 +68,9 @@ echo for this directory we can use restorecon to re-label the files
 echo 'restorecon -Rv /var/www/'
 read -sp '' promptvar
 restorecon -Rv /var/www/
+echo ''
+
+echo Check the web site again
+echo curl localhost
+read -sp '' promptvar
+curl localhost
