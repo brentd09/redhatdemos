@@ -5,6 +5,12 @@ read -sp '' promptvar
 ls -Z ~/demofile.txt
 echo ''
 
+echo Installing selinux tools
+echo sudo dnf install -y setools-console setools
+read -sp '' promptvar
+sudo dnf install -y setools-console setools
+echo ''
+
 echo Make selinux permissive
 echo setenforce 0
 sudo setenforce 0
