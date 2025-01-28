@@ -55,9 +55,9 @@ echo httpd_t is the label for the web server process
 echo ''
 
 echo Search for the label that should be on the index.html file
-echo "grep '/var/www' /etc/selinux/targeted/contexts/files/file_contexts"
+echo "semanage fcontext -l | grep '^/var/www(/.*)?'"
 read -sp '' promptvar
-sudo semanage fcontext -l | grep '^/var/www/(/.*)?'
+sudo semanage fcontext -l | grep '^/var/www(/.*)?'
 echo The label for the files in the www directory should be httpd_sys_content_t
 echo ''
 
