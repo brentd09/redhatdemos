@@ -52,19 +52,19 @@ echo httpd_t is the label for the web server process
 echo ''
 
 echo Search for the label that should be on the index.html file
-echo grep '/var/www' /etc/selinux/targeted/contexts/files/file_contexts
+echo "grep '/var/www' /etc/selinux/targeted/contexts/files/file_contexts"
 read -sp '' promptvar
 grep '/var/www' /etc/selinux/targeted/contexts/files/file_contexts
 echo The label for the files in the www directory should be httpd_sys_content_t
 echo ''
 echo Search for selinux policies that control httpd process access
-echo sesearch --allow | grep 'allow httpd_t httpd_sys_content_t'
+echo "sesearch --allow | grep 'allow httpd_t httpd_sys_content_t'"
 read -sp '' promptvar
 sesearch --allow | grep 'allow httpd_t httpd_sys_content_t'
 echo ''
 
 echo Because the file_contexts file already have a labelling convention
 echo for this directory we can use restorecon to re-label the files
-echo restorecon -Rv /var/www/
+echo 'restorecon -Rv /var/www/'
 read -sp '' promptvar
 restorecon -Rv /var/www/
