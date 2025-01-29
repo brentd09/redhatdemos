@@ -1,7 +1,7 @@
 #!/bin/bash
 
 username=$(whoami)
-if [[ ! $username -ne root ]]; then
+if [[ $username != root ]]; then
   echo Usage: please login as root before running this script
   exit 1
 fi
