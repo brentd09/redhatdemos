@@ -10,3 +10,5 @@ sudo echo 'done' >> /etc/cron.daily/log-datetime.sh
 
 chmod 777 /etc/cron.daily/log-datetime.sh
 
+echo Forcing anacron to run now
+anacron -fnd
