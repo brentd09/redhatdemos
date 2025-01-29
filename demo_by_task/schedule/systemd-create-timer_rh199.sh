@@ -1,4 +1,4 @@
-#!/bin/bash
+ 2 min#!/bin/bash
 
 username=$(whoami)
 if [[ $username != root ]]; then
