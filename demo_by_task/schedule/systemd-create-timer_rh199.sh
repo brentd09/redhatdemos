@@ -1,7 +1,14 @@
 #!/bin/bash
 
+username=$(whoami)
+if [[ ! $username -ne root ]]; then
+  echo Usage: please login as root before running this script
+  exit 1
+fi
+
 echo Create backup script
 sudo echo sleep 1000 > /usr/bin/backup.sh
+sudo chmod 755 /usr/bin/backup.sh
 
 echo Create backup service unit file
 sudo echo '[Unit]' > /etc/systemd/system/my_backup.service
