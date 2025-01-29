@@ -24,6 +24,6 @@ sudo echo 'WantedBy=timers.target' >> /etc/systemd/system/my_backup.timer
 
 sudo systemctl daemon-reload
 
-sudo systemctl enable -now my_backup.timer
+sudo systemctl enable --now my_backup.timer
 
 sudo systemctl list-timers --all
