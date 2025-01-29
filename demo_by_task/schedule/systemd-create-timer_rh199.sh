@@ -1,4 +1,4 @@
- 2 min#!/bin/bash
+#!/bin/bash
 
 username=$(whoami)
 if [[ $username != root ]]; then
@@ -33,17 +33,14 @@ echo Show backup script - /usr/bin/backup.sh
 cat /usr/bin/backup.sh
 read -sp '' promptvar
 echo ''
-
 echo Show backup service - /etc/systemd/system/my_backup.service
 cat /etc/systemd/system/my_backup.service
 read -sp '' promptvar
 echo ''
-
 echo Show backup timer - /etc/systemd/system/my_backup.timer
 cat /etc/systemd/system/my_backup.timer
 read -sp '' promptvar
 echo ''
-
 sudo systemctl daemon-reload
 
 sudo systemctl enable --now my_backup.timer
