@@ -20,7 +20,7 @@ sudo echo 'ExecStart=/usr/bin/backup.sh' >> /etc/systemd/system/my_backup.servic
 
 echo Create timer unit file
 sudo echo '[Unit]' > /etc/systemd/system/my_backup.timer
-sudo echo 'Description=Run My Backup Script Monthly' >> /etc/systemd/system/my_backup.timer
+sudo echo 'Description=Run My Backup Script Every 2 Minutes' >> /etc/systemd/system/my_backup.timer
 sudo echo '' >> /etc/systemd/system/my_backup.timer
 sudo echo '[Timer]' >> /etc/systemd/system/my_backup.timer
 sudo echo 'OnCalendar=*:0/2' >> /etc/systemd/system/my_backup.timer
