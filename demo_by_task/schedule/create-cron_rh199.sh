@@ -1,8 +1,6 @@
 #!/bin.bash
 
-echo crontab files are in this format
-echo Minutes Hours Day-of-Month Month Day-of-Week Command
-echo ------- ----- ------------ ----- ----------- -------
+cat /etc/crontab
 echo ''
 
 echo Run a command at 1:30pm on Tuesday and Thursday
