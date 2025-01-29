@@ -22,7 +22,7 @@ sudo echo '' >> /etc/systemd/system/my_backup.timer
 sudo echo '[Install]' >> /etc/systemd/system/my_backup.timer
 sudo echo 'WantedBy=timers.target' >> /etc/systemd/system/my_backup.timer
 
-sudo systemctl daemomn-reload
+sudo systemctl daemon-reload
 
 sudo systemctl enable -now my_backup.timer
 
