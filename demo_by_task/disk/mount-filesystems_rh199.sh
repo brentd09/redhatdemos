@@ -32,9 +32,16 @@ read -sp '' promptvar
 mkdir -p /mnt/hrdata
 echo ''
 
-echo 'mount /dev/vdc1 /mnt/salesdata'
+echo 'lsblk -fp '
 read -sp '' promptvar
-mount /dev/vdc1 /mnt/salesdata
+lsblk -fp 
+echo ''
+
+vdc1guid=lsblk -fp /dev/vdc1 | grep -oP '[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}'
+
+echo "mount UUID=$vdc1guid /mnt/salesdata"
+read -sp '' promptvar
+mount UUID=$vdc1guid /mnt/salesdata
 echo ''
 
 echo 'mount /dev/vdc2 /mnt/hrdata'
