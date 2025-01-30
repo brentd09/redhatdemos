@@ -9,21 +9,36 @@ fi
 # Make sure we are on the right server
 hostnm=$(hostname)
 if [[ $hostnm =~ servera ]]; then
-  # Define the disk (e.g., /dev/sda)
+  echo 'Define the disk and assign it the variable DISK  (e.g., /dev/sda)'
+  echo 'DISK="/dev/vdb"'
+  read -sp '' promptvar
   DISK="/dev/vdb"
-
-  # Start parted and input commands automatically
-  #!/bin/bash
+  
   # Automate partitioning of using parted
-  # Create a GPT partition table
+  
+  echo 'Create a GPT partition table'
+  echo 'parted $DISK --script mklabel gpt'
+  read -sp '' promptvar
   parted $DISK --script mklabel gpt
-  # Create the first partition of 500 MB
+  
+  echo Create the first partition of 500 MB
+  echo 'parted $DISK --script mkpart primary ext4 0% 500MB'
+  read -sp '' promptvar
   parted $DISK --script mkpart primary ext4 0% 500MB
-  # Create the second partition with the remaining space
+  
+  echo 'Create the second partition with the remaining space'
+  echo 'parted $DISK --script mkpart primary ext4 500MB 100%'
+  read -sp '' promptvar
   parted $DISK --script mkpart primary ext4 500MB 100%
-  # Print the partition table to verify
+  
+  echo 'Print the partition table to verify'
+  echo 'parted $DISK --script print'
   parted $DISK --script print
+
+  echo Format the partitions
   echo "Partitions created on $DISK."
+  echo 'mkfs.ext4 ${DISK}1 and 2'
+  read -sp '' promptvar
   mkfs.ext4 ${DISK}1
   mkfs.ext4 ${DISK}2
 else 
