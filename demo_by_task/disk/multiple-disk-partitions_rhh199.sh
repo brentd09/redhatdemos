@@ -23,9 +23,9 @@ if [[ $hostnm =~ servera ]]; then
     parted $DISK --script mkpart primary ext4 $partbgn1 $partend1
     parted $DISK --script mkpart primary ext4 $partbgn2 $partend2
     parted $DISK --script mkpart primary ext4 $partbgn3 $partend3
-    mkfs.ext4 ${DISK}1
-    mkfs.ext4 ${DISK}2
-    mkfs.ext4 ${DISK}3
+    mkfs.ext4 -F ${DISK}1
+    mkfs.ext4 -F ${DISK}2
+    mkfs.ext4 -F ${DISK}3
     parted $DISK --script print
   done
 else 
