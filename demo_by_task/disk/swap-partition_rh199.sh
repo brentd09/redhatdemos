@@ -45,7 +45,7 @@ if [[ $hostnm =~ servera ]]; then
   udevadm settle
 
   echo Locating the swap partition device names format and activate
-  echo 'devnames=$(lsblk -o KNAME,PARTTYPENAME | grep swap | awk \'{print "/dev/"$1}\')'
+  echo 'devnames=$(lsblk -o KNAME,PARTTYPENAME | grep swap | awk {print "/dev/"$1})'
   echo 'for device in devnames;do'
   echo '  mkswap $device'
   echo '  swapon $device'
