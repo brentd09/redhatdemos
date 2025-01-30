@@ -22,9 +22,9 @@ if [[ $hostnm =~ servera ]]; then
   parted $DISK --script mklabel gpt
   
   echo Create the first swap partition of 500 MB
-  echo 'parted $DISK --script mkpart primary ext4 2001MB 2500MB'
+  echo 'parted $DISK --script mkpart swap1 linux-swap 2001MB 2500MB'
   read -sp '' promptvar
-  parted $DISK --script mkpart primary ext4 2001MB 2500MB
+  parted $DISK --script mkpart swap1 linux-swap 2001MB 2500MB
   
   echo 'Create the second partition'
   echo 'parted $DISK --script mkpart swap2 linux-swap 2501MB 3000MB'
