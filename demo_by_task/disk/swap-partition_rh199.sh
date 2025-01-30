@@ -46,13 +46,13 @@ if [[ $hostnm =~ servera ]]; then
 
   echo Locating the swap partition device names format and activate
   echo 'devnames=$(lsblk -o KNAME,PARTTYPENAME | grep swap | awk {print "/dev/"$1})'
-  echo 'for device in devnames;do'
+  echo 'for device in $devnames;do'
   echo '  mkswap $device'
   echo '  swapon $device'
   echo 'done'
 
   devnames=$(lsblk -o KNAME,PARTTYPENAME | grep swap | awk '{print "/dev/"$1}')
-  for device in devnames;do
+  for device in $devnames;do
     mkswap $device
     swapon $device
   done
