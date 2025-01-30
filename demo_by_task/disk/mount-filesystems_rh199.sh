@@ -42,7 +42,7 @@ read -sp '' promptvar
 mount /dev/vdc2 /mnt/hrdata
 echo ''
 
-echo 'df
+echo 'df'
 read -sp '' promptvar
 df
 echo ''
