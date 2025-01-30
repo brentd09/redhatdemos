@@ -57,7 +57,6 @@ if [[ $hostnm =~ servera ]]; then
     swapon $device
   done
   cp /etc/fstab /etc/fstab.backup
-  grep 
   grep -v 'swap' /etc/fstab > /etc/fstab.new
   cp -f /etc/fstab.new /etc/fstab
   rm -f /etc/fstab.new
