@@ -58,6 +58,7 @@ if [[ $hostnm =~ servera ]]; then
   done
   echo ''
   echo 'Making the swap partitions persistent'
+  echo 'Adding the swap partitions to the /etc/fstab file'
   cp /etc/fstab /etc/fstab.backup
   grep -v 'swap' /etc/fstab > /etc/fstab.new
   cp -f /etc/fstab.new /etc/fstab
