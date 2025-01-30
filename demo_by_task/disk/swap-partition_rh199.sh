@@ -44,7 +44,7 @@ if [[ $hostnm =~ servera ]]; then
   read -sp '' promptvar
   udevadm settle
 
-  echo Locating the swap partition device names format and activate
+  echo Locating the swap partition device names then format and activate them
   echo 'devnames=$(lsblk -o KNAME,PARTTYPENAME | grep swap | awk {print "/dev/"$1})'
   echo 'for device in $devnames;do'
   echo '  mkswap $device'
@@ -56,12 +56,6 @@ if [[ $hostnm =~ servera ]]; then
     mkswap $device
     swapon $device
   done
-
-  echo 'Formatting the swap partitions'
-  echo 'mkswap '
-  read -sp '' promptvar
-  parted $DISK --script mkpart swap2 linux-swap 2501MB 3000MB  
-
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
