@@ -34,6 +34,18 @@ if [[ $hostnm =~ servera ]]; then
   echo 'Print the partition table to verify'
   echo 'parted $DISK --script print'
   parted $DISK --script print
+  echo ''
+
+  echo 'Wait for device actions to complete before proceeding'
+  echo 'udevadm settle'
+  read -sp '' promptvar
+  udevadm settle
+
+  echo 'Formatting the swap partitions'
+  echo 'parted $DISK --script mkpart swap2 linux-swap 2501MB 3000MB'
+  read -sp '' promptvar
+  parted $DISK --script mkpart swap2 linux-swap 2501MB 3000MB  
+
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
