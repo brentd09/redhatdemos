@@ -13,7 +13,8 @@ if [[ $hostnm =~ servera ]]; then
   echo '/dev/vdc1 - 100MB, /dev/vdc2 - 200MB, /dev/vdc3 - 300MB'
   echo '/dev/vdd1 - 500MB, /dev/vdd2 - 600MB, /dev/vdd3 - 700MB'
   DISKS="/dev/vdc /dev/vdd"
-  for DISK in $DISKS; do 
+  for DISK in $DISKS; do
+    paerted $DISK --script mklabel gpt
     if [[ $DISK == /dev/vdc ]];then
       partbgn1='0MB'; partend1='100MB'; partbgn2='101MB'; partend2='300MB'; partbgn3='301MB'; partend3='600MB'
     else 
