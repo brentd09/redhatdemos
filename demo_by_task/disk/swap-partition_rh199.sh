@@ -53,14 +53,18 @@ if [[ $hostnm =~ servera ]]; then
   read -sp '' promptvar
   devnames=$(lsblk -o KNAME,PARTTYPENAME | grep swap | awk '{print "/dev/"$1}')
   for device in $devnames;do
-    mkswap $device
-    swapon $device
+    mkswap $device &> /dev/null
+    swapon $device &> /dev/null
   done
+  echo ''
+  echo 'Making the swap partitions persistent'
   cp /etc/fstab /etc/fstab.backup
   grep -v 'swap' /etc/fstab > /etc/fstab.new
   cp -f /etc/fstab.new /etc/fstab
   rm -f /etc/fstab.new
   lsblk -o PARTTYPENAME,UUID,PATH | grep '^Linux swap' | awk 'BEGIN{pri=3}{print "UUID="$3"   swap   swap   pri="pri++"   0 0"}' >> /etc/fstab
+  echo ''
+  cat /etc/fstab 
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
