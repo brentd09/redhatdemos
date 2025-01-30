@@ -37,7 +37,7 @@ if [[ $hostnm =~ servera ]]; then
 
   echo Format the partitions
   echo "Partitions created on $DISK."
-  echo 'mkfs.ext4 ${DISK}1 and 2'
+  echo "mkfs.ext4 ${DISK}1 ; mkfs.ext4 ${DISK}2"
   read -sp '' promptvar
   mkfs.ext4 ${DISK}1
   mkfs.ext4 ${DISK}2
