@@ -51,7 +51,7 @@ if [[ $hostnm =~ servera ]]; then
   echo '  swapon $device'
   echo 'done'
   read -sp '' promptvar
-  devnames=$(lsblk -o KNAME,PARTTYPENAME | grep swap | awk '{print "/dev/"$1}')
+  devnames=$(lsblk -o PATH,PARTTYPENAME | grep swap | awk '{print $1}')
   for device in $devnames;do
     mkswap $device &> /dev/null
     swapon $device &> /dev/null
