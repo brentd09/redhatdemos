@@ -15,11 +15,14 @@ if [[ $hostnm =~ servera ]]; then
   DISK="/dev/vdb"
   
   # Automate partitioning of using parted
-  
-  echo 'Create a GPT partition table'
-  echo 'parted $DISK --script mklabel gpt'
-  read -sp '' promptvar
-  parted $DISK --script mklabel gpt
+
+  diskparttype=$(parted -sm $DISK)
+  if [[ $diskparttype =~ 'unknown' ]];then 
+    echo 'Create a GPT partition table'
+    echo 'parted $DISK --script mklabel gpt'
+    read -sp '' promptvar
+    parted $DISK --script mklabel gpt
+  fi
   
   echo Create the first swap partition of 500 MB
   echo 'parted $DISK --script mkpart swap1 linux-swap 2001MB 2500MB'
@@ -42,7 +45,7 @@ if [[ $hostnm =~ servera ]]; then
   udevadm settle
 
   echo 'Formatting the swap partitions'
-  echo 'parted $DISK --script mkpart swap2 linux-swap 2501MB 3000MB'
+  echo 'mkswap '
   read -sp '' promptvar
   parted $DISK --script mkpart swap2 linux-swap 2501MB 3000MB  
 
