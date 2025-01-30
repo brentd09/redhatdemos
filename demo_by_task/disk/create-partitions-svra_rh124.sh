@@ -39,8 +39,8 @@ if [[ $hostnm =~ servera ]]; then
   echo "Partitions created on $DISK."
   echo "mkfs.ext4 ${DISK}1 ; mkfs.ext4 ${DISK}2"
   read -sp '' promptvar
-  mkfs.ext4 ${DISK}1
-  mkfs.ext4 ${DISK}2
+  mkfs.ext4 -F ${DISK}1
+  mkfs.ext4 -F ${DISK}2
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
