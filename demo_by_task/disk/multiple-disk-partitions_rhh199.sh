@@ -9,7 +9,7 @@ fi
 # Make sure we are on the right server
 hostnm=$(hostname)
 if [[ $hostnm =~ servera ]]; then
-  echo 'This will create 3 partitions on /dev/vdb and 3 partitions on /dev/vdc'
+  echo 'This will create 3 partitions on /dev/vdc and 3 partitions on /dev/vdd'
   echo '/dev/vdc1 - 100MB, /dev/vdc2 - 200MB, /dev/vdc3 - 300MB'
   echo '/dev/vdd1 - 500MB, /dev/vdd2 - 600MB, /dev/vdd3 - 700MB'
   DISKS="/dev/vdc /dev/vdd"
