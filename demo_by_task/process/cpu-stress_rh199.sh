@@ -8,13 +8,10 @@ cpu_stress() {
     done
 }
 
-# Launch multiple CPU-hogging processes in the background
-for i in $(seq 1 $(nproc)); do
-    cpu_stress &
-done
+# Launch the CPU-hogging process in the background
+cpu_stress &
+
 
 # Wait for user to stop the script
-echo "CPU stressed. Press [CTRL+C] to stop."
-
 # Wait for all background processes to finish before exiting
 wait
