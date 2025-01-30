@@ -37,7 +37,7 @@ read -sp '' promptvar
 lsblk -fp 
 echo ''
 
-vdc1guid=lsblk -fp /dev/vdc1 | grep -oP '[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}'
+vdc1guid=$(lsblk -fp /dev/vdc1 | grep -oP '[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}')
 
 echo "mount UUID=$vdc1guid /mnt/salesdata"
 read -sp '' promptvar
