@@ -22,25 +22,18 @@ if [[ $hostnm =~ servera ]]; then
   parted $DISK --script mklabel gpt
   
   echo Create the first swap partition of 500 MB
-  echo 'parted $DISK --script mkpart primary ext4 0% 500MB'
+  echo 'parted $DISK --script mkpart primary ext4 2001MB 2500MB'
   read -sp '' promptvar
-  parted $DISK --script mkpart swap1 linux-swap 0% 500MB
+  parted $DISK --script mkpart primary ext4 2001MB 2500MB
   
-  echo 'Create the second partition with the remaining space'
-  echo 'parted $DISK --script mkpart primary ext4 500MB 100%'
+  echo 'Create the second partition'
+  echo 'parted $DISK --script mkpart swap2 linux-swap 2501MB 3000MB'
   read -sp '' promptvar
-  parted $DISK --script mkpart primary ext4 500MB 100%
+  parted $DISK --script mkpart swap2 linux-swap 2501MB 3000MB
   
   echo 'Print the partition table to verify'
   echo 'parted $DISK --script print'
   parted $DISK --script print
-
-  echo Format the partitions
-  echo "Partitions created on $DISK."
-  echo "mkfs.ext4 ${DISK}1 ; mkfs.ext4 ${DISK}2"
-  read -sp '' promptvar
-  mkfs.ext4 ${DISK}1
-  mkfs.ext4 ${DISK}2
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
