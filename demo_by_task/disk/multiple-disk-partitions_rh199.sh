@@ -19,7 +19,10 @@ if [[ $hostnm =~ servera ]]; then
     else 
       partbgn1='0MB'; partend1='500MB'; partbgn2='501MB'; partend2='1100MB'; partbgn3='1101MB'; partend3='1800MB'
     fi
-    parted $DISK --script mklabel gpt
+      diskparttype=$(parted -sm $DISK)
+    if [[ $diskparttype =~ 'unknown' ]];then 
+      parted $DISK --script mklabel gpt
+    fi
     parted $DISK --script mkpart primary ext4 $partbgn1 $partend1
     parted $DISK --script mkpart primary ext4 $partbgn2 $partend2
     parted $DISK --script mkpart primary ext4 $partbgn3 $partend3
