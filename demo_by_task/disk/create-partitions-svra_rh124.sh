@@ -26,10 +26,10 @@ if [[ $hostnm =~ servera ]]; then
   read -sp '' promptvar
   parted $DISK --script mkpart primary ext4 0% 500MB
   
-  echo 'Create the second partition with the remaining space'
-  echo 'parted $DISK --script mkpart primary ext4 500MB 100%'
+  echo 'Create the second partition'
+  echo 'parted $DISK --script mkpart primary ext4 500MB 2000MB'
   read -sp '' promptvar
-  parted $DISK --script mkpart primary ext4 500MB 100%
+  parted $DISK --script mkpart primary ext4 500MB 2000MB
   
   echo 'Print the partition table to verify'
   echo 'parted $DISK --script print'
