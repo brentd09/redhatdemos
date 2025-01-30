@@ -56,6 +56,12 @@ if [[ $hostnm =~ servera ]]; then
     mkswap $device
     swapon $device
   done
+  cp /etc/fstab /etc/fstab.backup
+  grep 
+  grep -v 'swap' /etc/fstab /etc/fstab.new
+  cp -f /etc/fstab.new /etc/fstab
+  rm -f /etc/fstab.new
+  lsblk -o PARTTYPENAME,UUID,PATH | grep '^Linux swap' | awk 'BEGIN{pri=3}{print "UUID="$3"   swap   swap   pri="pri++"   0 0"}' >> /etc/fstab
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
