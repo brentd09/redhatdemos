@@ -26,8 +26,8 @@ if [[ $hostnm =~ servera ]]; then
     mkfs.ext4 ${DISK}1
     mkfs.ext4 ${DISK}2
     mkfs.ext4 ${DISK}3
+    parted $DISK --script print
   done
-  parted $DISK --script print
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
