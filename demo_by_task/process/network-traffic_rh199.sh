@@ -10,7 +10,7 @@ sender() {
   echo "Sending traffic to $DEST_IP on port $DEST_PORT..."
 
   # Create a 1 GB file to send (adjust as needed), and send it using netcat
-  dd if=/dev/zero bs=1M count=1024 | nc $DEST_IP $DEST_PORT
+  dd if=/dev/zero bs=1M count=10240 | nc $DEST_IP $DEST_PORT
 }
 
 receiver() {
