@@ -40,7 +40,13 @@ read -sp '' promptvar
 sleep 90
 echo ''
 
-echo 'Check the tmp directory again, demofile.txt should be deleted'
-echo 'echo 'tree /usr/tmp'
+echo 'Have systemd-tmpfiles clean the temp directories '
+echo 'systemd-tmpfiles --clean'
 read -sp '' promptvar
-echo 'tree /usr/tmp
+systemd-tmpfiles --clean
+echo ''
+
+echo 'Check the tmp directory again, demofile.txt should be deleted'
+echo 'tree /usr/tmp'
+read -sp '' promptvar
+tree /usr/tmp
