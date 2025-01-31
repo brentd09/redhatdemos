@@ -19,6 +19,7 @@ echo ''
 echo 'pkill -SIGKILL -u devops'
 read -sp '' promptvar
 pkill -SIGKILL -u devops &> /dev/null
+wait
 echo ''
 
 echo 'pgrep -u devops'
