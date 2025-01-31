@@ -1,5 +1,7 @@
 #!/bin.bash
 
+crontab -r
+
 echo Set up three scheduled commands
 echo ''
 echo Run a command at 1:30pm on Tuesday and Thursday
