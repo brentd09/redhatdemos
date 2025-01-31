@@ -1,5 +1,8 @@
 #!/bin/bash
 
+cat /etc/anacrontab
+echo ''
+
 echo Create a script in /etc/cron.daily/log-datetime.sh
 sudo echo '#!/bin/bash' > /etc/cron.daily/log-datetime.sh
 sudo echo '' >> /etc/cron.daily/log-datetime.sh
