@@ -1,14 +1,5 @@
 #!/bin/bash
 
-if [[ $1 =~ rec ]];then
-  receiver
-elif [[ $1 =~ sen ]];then
-  sender
-else
-  echo 'Usage: network-traffic [ sender | receiver ]'
-  exit 1
-fi
-
 sender() {
   #!/bin/bash
 
@@ -33,3 +24,12 @@ receiver() {
   # Listen for incoming connections and discard the data
   nc -l -p $LISTEN_PORT > /dev/null
 }
+
+if [[ $1 =~ rec ]];then
+  receiver
+elif [[ $1 =~ sen ]];then
+  sender
+else
+  echo 'Usage: network-traffic [ sender | receiver ]'
+  exit 1
+fi
