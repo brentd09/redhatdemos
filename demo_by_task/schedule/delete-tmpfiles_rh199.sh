@@ -10,9 +10,9 @@ echo '' >> /etc/tmpfiles.d/myapp.conf
 echo '# Remove files that have not been accessed in 1 min' >> /etc/tmpfiles.d/myapp.conf
 echo 'x /var/tmp/myapp 755 - - -' >> /etc/tmpfiles.d/myapp.conf
 
-echo 'cat /etc/tmpfiles.d/myapp.comf'
+echo 'cat /etc/tmpfiles.d/myapp.conf'
 read -sp '' promptvar
-cat /etc/tmpfiles.d/myapp.comf
+cat /etc/tmpfiles.d/myapp.conf
 echo ''
 
 echo 'Check to see if the myapp directory exists, it will probably not exist yet'
