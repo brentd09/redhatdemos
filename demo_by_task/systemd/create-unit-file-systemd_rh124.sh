@@ -9,7 +9,7 @@ if [ $# -ne 1  ]; then
   usage
 fi
 
-option_lc=${1,,}
+option_lc=${1,,}   #    ${1,,} converts to lowercase
 
 case "$option_lc" in
   "--install" )
