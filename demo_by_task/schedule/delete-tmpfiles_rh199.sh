@@ -36,7 +36,6 @@ echo ''
 
 echo 'Wait 90 seconds'
 echo 'sleep 90'
-read -sp '' promptvar
 sleep 90
 echo ''
 
