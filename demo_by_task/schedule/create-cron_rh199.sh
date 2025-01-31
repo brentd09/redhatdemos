@@ -23,7 +23,7 @@ CRON_JOB="*/1 1-7,21 * * * sleep 30"
 ( crontab -l; echo "$CRON_JOB" ) | crontab -
 
 
-echo  'Example of job definition:'
+echo  ''
 echo  '.---------------- minute (0 - 59)'
 echo  '|  .------------- hour (0 - 23)'
 echo  '|  |  .---------- day of month (1 - 31)'
