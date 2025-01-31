@@ -33,3 +33,8 @@ echo  '|  |  |  |  |'
 echo  '*  *  *  *  * user-name command to be executed'
 echo ''
 crontab -l
+
+echo 'If DayOfMonth and DayOfWeek are both configured these are then setup as on OR not an AND'
+echo 'For example: */20 13 20 * 2 command'
+echo 'This will trigger the command to run every 20 minutes between 1:00pm - 1:59pm,'
+echo 'but only on the 20th of the month OR on Tuesdays'
