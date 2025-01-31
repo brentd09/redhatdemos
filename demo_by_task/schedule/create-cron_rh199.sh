@@ -1,6 +1,13 @@
 #!/bin.bash
 
-cat /etc/crontab
+echo  'Example of job definition:
+echo  '.---------------- minute (0 - 59)'
+echo  '|  .------------- hour (0 - 23)'
+echo  '|  |  .---------- day of month (1 - 31)'
+echo  '|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...'
+echo  '|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat'
+echo  '|  |  |  |  |'
+echo  '*  *  *  *  * user-name command to be executed'
 echo ''
 
 echo Run a command at 1:30pm on Tuesday and Thursday
@@ -20,3 +27,15 @@ echo Run a command every minute stating at 1:00am until 7:59am and then 9:00pm u
 CRON_JOB="*/1 1-7,21 * * * sleep 30"
 # Add the cron job to the crontab
 ( crontab -l; echo "$CRON_JOB" ) | crontab -
+
+
+echo  'Example of job definition:
+echo  '.---------------- minute (0 - 59)'
+echo  '|  .------------- hour (0 - 23)'
+echo  '|  |  .---------- day of month (1 - 31)'
+echo  '|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...'
+echo  '|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat'
+echo  '|  |  |  |  |'
+echo  '*  *  *  *  * user-name command to be executed'
+cat /etc/crontab
+crontab -l
