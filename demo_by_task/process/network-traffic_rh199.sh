@@ -4,7 +4,7 @@ sender() {
   #!/bin/bash
 
   # Replace with the desired destination IP and port
-  DEST_IP="192.168.1.100"
+  DEST_IP="serverb"
   DEST_PORT="12345"
 
   echo "Sending traffic to $DEST_IP on port $DEST_PORT..."
