@@ -1,10 +1,12 @@
 #!/bin/bash
 
+echo 'Starting a series of processes as the devops user'
 sudo -u devops sleep 10000 & &> /dev/null
 sudo -u devops sleep 10000 & &> /dev/null
 sudo -u devops sleep 10000 & &> /dev/null
 sudo -u devops sleep 10000 & &> /dev/null
 sudo -u devops sleep 10000 & &> /dev/null
+echo ''
 
 echo 'ps -ef | grep devops'
 read -sp '' promptvar
