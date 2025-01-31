@@ -8,7 +8,7 @@ echo '# Create a temporary file with 600 mode' >> /etc/tmpfiles.d/myapp.conf
 echo 'f /var/tmp/myapp/createdfile.txt 600 root root -' >> /etc/tmpfiles.d/myapp.conf
 echo '' >> /etc/tmpfiles.d/myapp.conf
 echo '# Remove files that have not been accessed in 1 min' >> /etc/tmpfiles.d/myapp.conf
-echo 'x /var/tmp/myapp 755 - - - 1m' >> /etc/tmpfiles.d/myapp.conf
+echo 'x /var/tmp/myapp - - - 1m' >> /etc/tmpfiles.d/myapp.conf
 
 echo 'cat /etc/tmpfiles.d/myapp.conf'
 read -sp '' promptvar
