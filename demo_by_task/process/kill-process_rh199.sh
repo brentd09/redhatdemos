@@ -15,3 +15,13 @@ echo 'pgrep -u devops'
 read -sp '' promptvar
 pgrep -u devops
 echo ''
+
+echo 'pkill -SIGKILL -u devops'
+read -sp '' promptvar
+pkill -SIGKILL -u devops
+echo ''
+
+echo 'pgrep -u devops'
+read -sp '' promptvar
+pgrep -u devops
+echo ''
