@@ -27,11 +27,67 @@ if [[ $hostnm =~ servera ]]; then
     parted $DISK --script mkpart primary ext4 $partbgn1 $partend1
     parted $DISK --script mkpart primary ext4 $partbgn2 $partend2
     parted $DISK --script mkpart primary ext4 $partbgn3 $partend3
-    mkfs.ext4 -F ${DISK}1
-    mkfs.ext4 -F ${DISK}2
-    mkfs.ext4 -F ${DISK}3
     parted $DISK --script print
   done
+  echo 'lsblk /dev/vd{c..d}'
+  read -sp '' promptvar
+  lsblk /dev/vd{c..d}
+  echo ''
+  
+  echo  'pvcreate /dev/vd{c..d}{1..3}'
+  read -sp '' promptvar
+  pvcreate /dev/vd{c..d}{1..3}
+  echo ''
+  
+  echo 'vgcreate vg1_demo /dev/vdc1 /dev/vdc2 /dev/vdc3 /dev/vdd1 /dev/vdd2 /dev/vdd3' 
+  read -sp '' promptvar
+  vgcreate vg1_demo /dev/vdc1 /dev/vdc2 /dev/vdc3 /dev/vdd1 /dev/vdd2 /dev/vdd3 
+  echo ''
+  
+  echo 'lvcreate --name lv1_demo -L 1GB vg1_demo'
+  read -sp '' promptvar
+  lvcreate --name lv1_demo -L 1GB vg1_demo
+  echo ''
+  
+  echo 'lvcreate --name lv2_demo -L 800MB vg1_demo'
+  read -sp '' promptvar
+  lvcreate --name lv2_demo -L 800MB vg1_demo
+  echo ''
+  
+  echo 'lsblk'
+  read -sp '' promptvar
+  lsblk /dev/vd{c..d}
+  echo ''
+
+  echo 'mkfs.ext4 /dev/vg1_demo/lv1_demo'
+  read -sp '' promptvar
+  mkfs.ext4 /dev/vg1_demo/lv1_demo
+  echo ''
+
+  echo 'mkfs.ext4 /dev/vg1_demo/lv2_demo'
+  read -sp '' promptvar
+  mkfs.ext4 /dev/vg1_demo/lv2_demo
+  echo ''
+
+  echo 'mkdir /mnt/vol{1..2}'
+  read -sp '' promptvar
+  mkdir /mnt/vol{1..2}
+  echo ''
+
+  echo 'mount /dev/vg1_demo/lv1_demo /mnt/vol1'
+  read -sp '' promptvar
+  mount /dev/vg1_demo/lv1_demo /mnt/vol1
+  echo ''
+
+  echo 'mount /dev/vg1_demo/lv2_demo /mnt/vol2'
+  read -sp '' promptvar
+  mount /dev/vg1_demo/lv2_demo /mnt/vol2
+  echo ''
+
+  echo 'df'
+  read -sp '' promptvar
+  df
+  echo ''  
   
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
