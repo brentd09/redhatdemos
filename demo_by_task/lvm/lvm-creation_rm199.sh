@@ -29,6 +29,9 @@ if [[ $hostnm =~ servera ]]; then
     parted $DISK --script mkpart primary ext4 $partbgn3 $partend3
     parted $DISK --script print
   done
+  clear
+  echo Just created 6 partitions
+  echo ''
   echo 'lsblk /dev/vd{c..d}'
   read -sp '' promptvar
   lsblk /dev/vd{c..d}
