@@ -15,6 +15,11 @@ if [[ $hostnm =~ servera ]]; then
   parted /dev/vdc --script mkpart lvmextend ext4 601MB 3000MB
   echo ''
 
+  echo 'lsblk'
+  read -sp '' promptvar
+  lsblk
+  echo ''  
+
   echo 'pvcreate /dev/vdc4'
   read -sp '' promptvar
   pvcreate /dev/vdc4
