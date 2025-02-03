@@ -12,7 +12,7 @@ if [[ $hostnm =~ servera ]]; then
 
   echo 'parted /dev/vdc --script mkpart lvmextend etx4 601MB 3000MB'
   read -sp '' promptvar
-  parted /dev/vdc --script mkpart lvmextend etx4 601MB 3000MB
+  parted /dev/vdc --script mkpart lvmextend ext4 601MB 3000MB
   echo ''
 
   echo 'pvcreate /dev/vdc4'
