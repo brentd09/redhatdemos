@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ -f $1 ]];then 
+  cat $1 | grep -v ^$ | while read line;do
+    echo "echo \"$line\""
+    echo "read -sp '' promptvar"
+    echo $line
+    echo "echo ''"
+    echo ''
+  done  
+else 
+  echo "Usage: $0 <filename>"
+  exit 1
+fi
