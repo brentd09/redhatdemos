@@ -7,3 +7,5 @@
   - Reverting the snapshot to create a pristene image
 - convert-cmd-list-to-demo.sh
   - Takes a series of commands and turns them into a prompting set of instructions ready for a class demo  
+- update-hosts-file-for-vms.sh
+  - This discovers the hostname and ipaddress of the KVM guests ans updates the local hosts file with the information
