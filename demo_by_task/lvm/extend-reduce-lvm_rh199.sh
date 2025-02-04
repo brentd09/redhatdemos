@@ -10,6 +10,16 @@ fi
 hostnm=$(hostname)
 if [[ $hostnm =~ servera ]]; then
 
+ lvcreate --name lv3_demo -L 3GB vg1_demo
+  echo 'If we tried to add or exten an LV we would need the' 
+  echo 'extents available in the VG which we do not have'
+  echo ''
+  echo 'lvcreate --name lv3_demo -L 3GB vg1_demo'
+  read -sp '' promptvar
+  lvcreate --name lv3_demo -L 3GB vg1_demo
+  echo ''
+
+
   echo 'Add a partition and extend the VG'
   echo ''
   echo 'parted /dev/vdc --script mkpart lvmextend etx4 601MB 3000MB'
