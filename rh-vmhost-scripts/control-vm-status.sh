@@ -17,11 +17,17 @@ vms=$(virsh list --all --name | sort | grep -v '^$' | paste -sd ' ')
 
 for vm_guest_name in $vms; do 
   if [[ $1 =~ ^st ]];then
-    virsh start $vm_guest_name
+    echo "Starting the VM: $vm_guest_name "  
+    virsh start $vm_guest_name &> /dev/null
   elif [[ $1 =~ ^sh ]];then
-    virsh shutdown $vm_guest_name
+    echo "Shutting down the VM: $vm_guest_name "  
+    virsh shutdown $vm_guest_name &> /dev/null
   else
     echo "$0 [start|shutdown]" 	  
     exit 3
   fi	  
 done
+
+echo 'getting VM status... Please wait'
+sleep 5
+virsh list --all
