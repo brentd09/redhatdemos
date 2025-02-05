@@ -32,10 +32,13 @@ read -sp '' promptvar
 journalctl -p err
 echo ''
 
+curr_date=$(date "+%Y-%m-%d %H:%M:%S")
+date_hour_prior=$(date -d "1 hour ago" "+%Y-%m-%d %H:%M:%S)
+
 echo Filtering by Time Period:
-echo "journalctl --since "2025-05-01 12:00:00" --until "2025-05-01 14:00:00""
+echo "journalctl --since $date_hour_prior --until $curr_date"
 read -sp '' promptvar
-journalctl --since "2025-05-01 12:00:00" --until "2025-05-01 14:00:00"
+journalctl --since $date_hour_prior --until $curr_date
 echo ''
 
 echo Debugging Application Issues:
@@ -52,7 +55,7 @@ read -sp '' promptvar
 journalctl -k
 echo ''
 
-echo Monitoring (Following) Logs in Real-time:
+echo 'Monitoring (Following) Logs in Real-time:'
 echo "journalctl -f"
 read -sp '' promptvar
 journalctl -f
