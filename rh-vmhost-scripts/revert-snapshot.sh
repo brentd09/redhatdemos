@@ -32,5 +32,6 @@ do
   if [[ $vm_guest_name != all ]];then
     echo "${vm_guest_name}: Reverting Snapshot"
     virsh snapshot-revert --snapshotname ReadyForLabs $vm_guest_name
-  fi
+    echo "Rebooting ${vm_guest_name} to sync date/time"
+    virsh reboot $vm_guest_name
 done
