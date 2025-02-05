@@ -13,8 +13,7 @@ read -sp '' promptvar
 journalctl -b
 echo ''
 
-# Reviewing User Login Activities:
-echo To track user login attempts
+echo Reviewing User Activities:
 echo "journalctl _UID=1000"
 read -sp '' promptvar
 journalctl _UID=1000
