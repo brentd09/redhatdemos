@@ -36,9 +36,9 @@ curr_date=$(date "+%Y-%m-%d")
 yesterday=$(date -d "1 day ago" "+%Y-%m-%d")
 
 echo Filtering by Time Period:
-echo "journalctl --since \"$yesterday\" --until \"$curr_date\""
+echo "journalctl --since $yesterday --until $curr_date "
 read -sp '' promptvar
-journalctl --since \"$yesterday\" --until \"$curr_date\"
+journalctl --since  $yesterday  --until  $curr_date 
 echo ''
 
 echo Debugging Application Issues:
