@@ -25,7 +25,7 @@ fi
 if [[ "$1" == "all" ]];then
   guestnames=$guests
 else 
-  guestnames=echo $guests | grep -o $1
+  guestnames=$(echo $guests | grep -o $1)
 fi
 for vm_guest_name in $guestnames
 do
