@@ -13,12 +13,6 @@ read -sp '' promptvar
 journalctl -b
 echo ''
 
-# Monitoring (Following) Logs in Real-time:
-echo "journalctl -f"
-read -sp '' promptvar
-journalctl -f
-echo ''
-
 # Reviewing User Login Activities:
 # To track user login attempts
 echo "journalctl _UID=1000"
@@ -56,4 +50,10 @@ echo ''
 echo "journalctl -k"
 read -sp '' promptvar
 journalctl -k
+echo ''
+
+# Monitoring (Following) Logs in Real-time:
+echo "journalctl -f"
+read -sp '' promptvar
+journalctl -f
 echo ''
