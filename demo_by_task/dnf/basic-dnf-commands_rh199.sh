@@ -40,3 +40,8 @@ echo "dnf repoquery zip --location"
 read -sp '' promptvar
 dnf repoquery zip --location
 echo ''
+
+echo "dnf install httpd"
+read -sp '' promptvar
+dnf install httpd
+echo ''
