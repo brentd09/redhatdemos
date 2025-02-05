@@ -26,7 +26,7 @@ journalctl -t NetworkManager
 echo ''
 
 echo Tracking Events by Severity:
-echo Options are emerg, alert, crit,err, warning, notice, info, debug
+echo Options are emerg,alert,crit,err,warning,notice,info,debug
 echo "journalctl -p err"
 read -sp '' promptvar
 journalctl -p err
