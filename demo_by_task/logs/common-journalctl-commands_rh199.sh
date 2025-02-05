@@ -1,9 +1,9 @@
 # Using journalctl on a Red Hat Enterprise Linux (RHEL) 9 system can be very beneficial for system administrators and users for various reasons. Here are some real-world examples of scenarios where journalctl is helpful:
 # Troubleshooting Service Failures:
 # If a service fails to start or crashes
-echo "journalctl -u ssh.service"
+echo "journalctl -u sshd.service"
 read -sp '' promptvar
-journalctl -u ssh.service
+journalctl -u sshd.service
 echo ''
 
 # Analyzing System Boot Issues:
