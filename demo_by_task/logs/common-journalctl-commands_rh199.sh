@@ -33,7 +33,7 @@ journalctl -p err
 echo ''
 
 curr_date=$(date "+%Y-%m-%d %H:%M:%S")
-date_hour_prior=$(date -d "1 hour ago" "+%Y-%m-%d %H:%M:%S)
+date_hour_prior=$(date -d "1 hour ago" "+%Y-%m-%d %H:%M:%S")
 
 echo Filtering by Time Period:
 echo "journalctl --since $date_hour_prior --until $curr_date"
