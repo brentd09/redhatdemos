@@ -26,10 +26,11 @@ read -sp '' promptvar
 journalctl -t NetworkManager
 echo ''
 
-# Tracking Security Events:
+# Tracking Events by Severity:
+# Options are emerg, alert, crit,err, warning, notice, info, debug
 echo "journalctl -p auth"
 read -sp '' promptvar
-journalctl -p auth
+journalctl -p err
 echo ''
 
 # Filtering by Time Period:
