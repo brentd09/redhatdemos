@@ -1,9 +1,9 @@
 # Using journalctl on a Red Hat Enterprise Linux (RHEL) 9 system can be very beneficial for system administrators and users for various reasons. Here are some real-world examples of scenarios where journalctl is helpful:
 # Troubleshooting Service Failures:
 # If a service fails to start or crashes
-echo "journalctl -u <service_name>"
+echo "journalctl -u ssh.service"
 read -sp '' promptvar
-journalctl -u <service_name>
+journalctl -u ssh.service
 echo ''
 
 # Analyzing System Boot Issues:
@@ -21,9 +21,9 @@ echo ''
 
 # Reviewing User Login Activities:
 # To track user login attempts
-echo "journalctl _UID=<user_id>"
+echo "journalctl _UID=1000"
 read -sp '' promptvar
-journalctl _UID=<user_id>
+journalctl _UID=1000
 echo ''
 
 # Identifying Network Issues:
@@ -46,9 +46,9 @@ echo ''
 
 # Debugging Application Issues:
 # If a custom application generates log information
-echo "journalctl -t my-application-tag"
+echo "journalctl -t sshd"
 read -sp '' promptvar
-journalctl -t my-application-tag
+journalctl -t sshd
 echo ''
 
 # Checking for Kernel Messages:
