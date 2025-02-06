@@ -40,7 +40,7 @@ read -sp '' promptvar
 systemctl restart chronyd.service
 echo ''
 
-# force an ntp timesync
+echo To force the ntp timesync
 echo "chronyc makestep"
 read -sp '' promptvar
 chronyc makestep
