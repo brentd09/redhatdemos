@@ -1,4 +1,4 @@
-qecho "mkdir -p /var/log/journal"
+echo "mkdir -p /var/log/journal"
 read -sp '' promptvar
 mkdir -p /var/log/journal
 echo ''
