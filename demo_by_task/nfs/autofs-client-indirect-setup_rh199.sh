@@ -74,3 +74,56 @@ read -sp '' promptvar
 tree /projects
 echo ''
 
+echo '------------- Direct Automount -------------------------'
+
+echo '/- /etc/auto.project.direct' >> /etc/auto.master
+echo "vi /etc/auto.master"
+read -sp '' promptvar
+vi /etc/auto.master
+echo ''
+
+echo '/directprojects/proj1 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project1' > /etc/auto.project.direct
+echo '/directprojects/proj2 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project2' >> /etc/auto.project.direct
+echo '/directprojects/proj3 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project3' >> /etc/auto.project.direct
+
+echo "vi /etc/auto.project.direct"
+read -sp '' promptvar
+vi /etc/auto.project.direct
+echo ''
+
+echo "mkdir -p /directprojects/"
+read -sp '' promptvar
+mkdir -p /directprojects/
+echo ''
+
+echo "systemctl restart autofs"
+read -sp '' promptvar
+systemctl restart autofs
+echo ''
+
+echo "cd /directprojects/"
+read -sp '' promptvar
+cd /directprojects/
+echo ''
+
+echo "ls"
+read -sp '' promptvar
+ls
+echo ''
+
+echo "cd proj1"
+read -sp '' promptvar
+cd proj1
+echo ''
+
+echo "ls"
+read -sp '' promptvar
+ls
+echo ''
+
+echo "touch file1"
+read -sp '' promptvar
+touch file1
+echo ''
+
+
