@@ -39,9 +39,17 @@ vi /etc/fstab
 echo ''
 
 echo 'When unmounting the NFS mount point, first check to see if anyone is using the NFS share'
+echo "cd /mnt/serverb_nfs/"
+cd /mnt/serverb_nfs/
 echo "lsof /mnt/serverb_nfs/"
 read -sp '' promptvar
-lsof /mnt/serverb_nfs/
+lsof /mnt/serverb_nfs/ 2> /dev/null
+echo ''
+echo "cd "
+cd
+echo "lsof /mnt/serverb_nfs/"
+read -sp '' promptvar
+lsof /mnt/serverb_nfs/ 2> /dev/null
 echo ''
 
 echo "umount /mnt/serverb_nfs"
