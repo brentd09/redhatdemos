@@ -2,10 +2,14 @@
 
 if [[ -f $1 ]];then 
   cat $1 | grep -v ^$ | while read line;do
-    if [[ $line =~ # ]];then 
+    if [[ $line =~ \# ]];then 
       echo $line
       continue
     fi    
+    if [[ $line =~ ^echo ]];then 
+      echo $line
+      continue
+    fi        
     echo "echo \"$line\""
     echo "read -sp '' promptvar"
     echo $line
