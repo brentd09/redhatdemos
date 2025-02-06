@@ -1,8 +1,13 @@
 #!/bin/bash
 
+#me=$(whoami)
+#if [[ $me != root ]];then
+#  echo 'Usage: Must be run as root on serverb'
+#fi
+
 #this_machine=$(hostname)
 #if [[ $this_machine != serverb ]];then
-#  echo 'Usage: This needs to be run on serverb'
+#  echo 'Usage: Must be run as root on serverb'
 #  exit1
 #fi
 
