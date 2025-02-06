@@ -64,9 +64,13 @@ read -sp '' promptvar
 ls project1
 echo ''
 
+echo "ls project2"
+read -sp '' promptvar
+ls project2
+echo ''
 
-
-
-
-[root@rhelhost nfs]# 
+echo "tree /projects"
+read -sp '' promptvar
+tree /projects
+echo ''
 
