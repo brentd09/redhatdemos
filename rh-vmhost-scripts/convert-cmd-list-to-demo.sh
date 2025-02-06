@@ -6,10 +6,6 @@ if [[ -f $1 ]];then
       echo $line
       continue
     fi    
-    if [[ $line =~ ^echo ]];then 
-      echo $line
-      continue
-    fi 
     echo "echo \"$line\""
     echo "read -sp '' promptvar"
     echo $line
