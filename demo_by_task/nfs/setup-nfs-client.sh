@@ -18,7 +18,7 @@ echo ''
 
 echo "mkdir -p /mnt/serverb_nfs"
 read -sp '' promptvar
-mkdir -p /mnt/serverbnfs
+mkdir -p /mnt/serverb_nfs
 echo ''
 
 echo "mount -t nfs serverb:/srv/nfs_share /mnt/serverb_nfs"
