@@ -4,7 +4,7 @@ mkdir -p /var/log/journal
 echo ''
 
 echo Edit the /etc/systemd/journald.conf file to set the log to be Persistent
-echo "sed -i "/s/Storage=.+/Storage=persistent/g" /etc/systemd/journald.conf"
+echo "sed -i "s/.\*Storage=.+/Storage=persistent/g" /etc/systemd/journald.conf"
 read -sp '' promptvar
 sed -i "/s/Storage=.+/Storage=persistent/g" /etc/systemd/journald.conf
 echo ''
