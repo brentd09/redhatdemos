@@ -1,20 +1,21 @@
-echo "mkdir -p /var/log/journal"
-read -sp '' promptvar
+
 mkdir -p /var/log/journal
-echo ''
-
-echo Edit the /etc/systemd/journald.conf file to set the log to be Persistent
-echo "sed -i "s/.\*Storage=.\+/Storage=persistent/g" /etc/systemd/journald.conf"
-read -sp '' promptvar
 sed -i "s/.*Storage=.\+/Storage=persistent/g" /etc/systemd/journald.conf
-echo ''
-
-echo "less /etc/systemd/journald.conf"
-read -sp '' promptvar
 less /etc/systemd/journald.conf
-echo ''
-
-echo "systemctl restart systemd-journald"
-read -sp '' promptvar
 systemctl restart systemd-journald
-echo ''
+ls /var/log/journal
+
+# If the persistent logs are not created
+
+grep 'Storage=' /etc/systemd/journald.conf
+# Should show and uncommented Storage=Persistent
+
+chown root:systemd-journal /var/log/journal/
+chmod 2775 /var/log/journal
+systemctl restart systemd-journald
+
+journalctl --flush
+journalctl --verify
+logger Testing the persistent journal
+journalctl -n 10
+ 
