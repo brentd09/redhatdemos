@@ -3,9 +3,9 @@ read -sp '' promptvar
 mkdir -p /var/log/journal
 echo ''
 
-echo "sed -i "s/.*Storage=.+/Storage=persistent/g" /etc/systemd/journald.conf"
+echo "vim /etc/systemd/journald.conf"
 read -sp '' promptvar
-sed -i "s/.*Storage=.+/Storage=persistent/g" /etc/systemd/journald.conf
+vim /etc/systemd/journald.conf
 echo ''
 
 echo "less /etc/systemd/journald.conf"
