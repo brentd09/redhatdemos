@@ -1,0 +1,13 @@
+echo '/- /etc/auto.project.direct' >> /etc/auto.master
+vi /etc/auto.master
+echo '/directprojects/proj1 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project1' >  /etc/auto.project.direct  
+echo '/directprojects/proj2 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project2' >> /etc/auto.project.direct  
+echo '/directprojects/proj3 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project3' >> /etc/auto.project.direct  
+vi /etc/auto.project.direct
+mkdir -p /directprojects/
+systemctl restart autofs
+cd /directprojects/
+ls
+cd proj1
+ls
+touch file1
