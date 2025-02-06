@@ -61,14 +61,14 @@ read -sp '' promptvar
 mkdir -p /srv/nfs_share
 echo ''
 
-echo "chown -R nobody:nobody /srv/nfsr_hare"
+echo "chown -R nobody:nobody /srv/nfs_share"
 read -sp '' promptvar
-chown -R nobody:nobody /srv/nfsr_hare
+chown -R nobody:nobody /srv/nfs_share
 echo ''
 
-echo "chmod 777 /srv/nfsr_hare"
+echo "chmod 777 /srv/nfs_share"
 read -sp '' promptvar
-chmod 777 /srv/nfsr_hare
+chmod 777 /srv/nfs_share
 echo ''
 
 echo '/srv/nfs_share 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
