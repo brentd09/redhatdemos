@@ -1,3 +1,11 @@
+#!/bin/bash
+
+WHO=$(whoami)
+if [[ "$WHO" != "root" ]];then
+  echo 'USAGE: Please run as root'
+  exit 1
+fi 
+
 echo "mkdir -p /var/log/journal"
 read -sp '' promptvar
 mkdir -p /var/log/journal
