@@ -1,15 +1,15 @@
 #!/bin/bash
-
-me=$(whoami)
-if [[ $me != root ]];then
-  echo 'Usage: Must be run as root on serverb'
-fi
-
-this_machine=$(hostname)
-if [[ $this_machine != servera ]];then
-  echo 'Usage: Must be run as root on serverb'
-  exit1
-fi
+#
+#me=$(whoami)
+#if [[ $me != root ]];then
+#  echo 'Usage: Must be run as root on serverb'
+#fi
+#
+#this_machine=$(hostname)
+#if [[ $this_machine != servera ]];then
+#  echo 'Usage: Must be run as root on serverb'
+#  exit1
+#fi
 
 
 dnf install -y nfs-utils
