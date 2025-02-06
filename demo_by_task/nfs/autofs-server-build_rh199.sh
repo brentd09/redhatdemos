@@ -23,7 +23,7 @@ firewall-cmd --reload
 
 mkdir -p /srv/project1 /srv/project2 /srv/project3 
 chown -R nobody:nobody /srv/project*
-chmod 777 /srv//srv/project*
+chmod 777 /srv/project*
 echo '/srv/project1 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
 echo '/srv/project2 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
 echo '/srv/project3 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
