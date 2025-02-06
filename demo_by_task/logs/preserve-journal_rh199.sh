@@ -23,16 +23,17 @@ read -sp '' promptvar
 ls /var/log/journal
 echo ''
 
-# If the persistent logs are not created
+echo If the persistent logs are not automatically created
+echo ''
 echo "grep 'Storage=' /etc/systemd/journald.conf"
 read -sp '' promptvar
 grep 'Storage=' /etc/systemd/journald.conf
 echo ''
 
-# Should show and uncommented Storage=Persistent
 echo "chown root:systemd-journal /var/log/journal/"
 read -sp '' promptvar
 chown root:systemd-journal /var/log/journal/
+echo 'Should show and uncommented Storage=Persistent'
 echo ''
 
 echo "chmod 2775 /var/log/journal"
@@ -63,4 +64,9 @@ echo ''
 echo "journalctl -n 10"
 read -sp '' promptvar
 journalctl -n 10
+echo ''
+
+echo "ls /var/log/journal"
+read -sp '' promptvar
+ls /var/log/journal
 echo ''
