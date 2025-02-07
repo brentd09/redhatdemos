@@ -90,7 +90,9 @@ esac
 sleep 10
 systemctl daemon-reload
 systemctl daemon-reload
-echo 'Check out the following files:'
+echo 'These files have been removed:'
 echo '/etc/systemd/system/myscript.service'
 echo '/usr/bin/myscript.sh'
+echo '/usr/tmp/service.log'
+
 
