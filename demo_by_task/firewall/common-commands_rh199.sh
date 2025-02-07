@@ -117,15 +117,27 @@ sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Make Rules Permanent:
-echo "sudo firewall-cmd --zone=public --remove-service=http --permanent"
+echo "sudo firewall-cmd --zone=public --add-service=http --permanent"
 read -sp '' promptvar
-sudo firewall-cmd --zone=public --remove-service=http --permanent
+sudo firewall-cmd --zone=public --add-service=http --permanent
+echo ''
+
+# List All Rules in a Specific Zone:
+echo "sudo firewall-cmd --zone=public --list-all"
+read -sp '' promptvar
+sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Reload Firewall Rules:
 echo "sudo firewall-cmd --reload"
 read -sp '' promptvar
 sudo firewall-cmd --reload
+echo ''
+
+# List All Rules in a Specific Zone:
+echo "sudo firewall-cmd --zone=public --list-all"
+read -sp '' promptvar
+sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Add Rich Rules:
