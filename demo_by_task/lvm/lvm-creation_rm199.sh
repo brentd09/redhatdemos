@@ -32,63 +32,76 @@ if [[ $hostnm =~ servera ]]; then
   clear
   echo Just created 6 partitions
   echo ''
-  echo 'lsblk /dev/vd{c..d}'
+  
+  echo -n 'lsblk /dev/vd{c..d}'
   read -sp '' promptvar
+  echo ''
   lsblk /dev/vd{c..d}
   echo ''
   
-  echo  'pvcreate /dev/vd{c..d}{1..3}'
+  echo -n  'pvcreate /dev/vd{c..d}{1..3}'
   read -sp '' promptvar
+  echo ''
   pvcreate /dev/vd{c..d}{1..3}
   echo ''
   
-  echo 'vgcreate vg1_demo /dev/vdc1 /dev/vdc2 /dev/vdc3 /dev/vdd1 /dev/vdd2 /dev/vdd3' 
+  echo -n 'vgcreate vg1_demo /dev/vdc1 /dev/vdc2 /dev/vdc3 /dev/vdd1 /dev/vdd2 /dev/vdd3' 
   read -sp '' promptvar
+  echo ''
   vgcreate vg1_demo /dev/vdc1 /dev/vdc2 /dev/vdc3 /dev/vdd1 /dev/vdd2 /dev/vdd3 
   echo ''
   
-  echo 'lvcreate --name lv1_demo -L 1GB vg1_demo'
+  echo -n 'lvcreate --name lv1_demo -L 1GB vg1_demo'
   read -sp '' promptvar
+  echo ''
   lvcreate --name lv1_demo -L 1GB vg1_demo
   echo ''
   
-  echo 'lvcreate --name lv2_demo -L 800MB vg1_demo'
+  echo -n 'lvcreate --name lv2_demo -L 800MB vg1_demo'
   read -sp '' promptvar
+  echo ''
   lvcreate --name lv2_demo -L 800MB vg1_demo
   echo ''
   
-  echo 'lsblk'
+  echo -n 'lsblk'
   read -sp '' promptvar
+  echo ''
   lsblk /dev/vd{c..d}
   echo ''
 
-  echo 'mkfs.ext4 /dev/vg1_demo/lv1_demo'
+  echo -n 'mkfs.ext4 /dev/vg1_demo/lv1_demo'
   read -sp '' promptvar
+  echo ''
   mkfs.ext4 /dev/vg1_demo/lv1_demo
   echo ''
 
-  echo 'mkfs.ext4 /dev/vg1_demo/lv2_demo'
+  echo -n 'mkfs.ext4 /dev/vg1_demo/lv2_demo'
   read -sp '' promptvar
+  echo ''
   mkfs.ext4 /dev/vg1_demo/lv2_demo
   echo ''
 
-  echo 'mkdir /mnt/vol{1..2}'
+  echo -n 'mkdir /mnt/vol{1..2}'
   read -sp '' promptvar
+  echo ''
   mkdir /mnt/vol{1..2}
   echo ''
 
-  echo 'mount /dev/vg1_demo/lv1_demo /mnt/vol1'
+  echo -n 'mount /dev/vg1_demo/lv1_demo /mnt/vol1'
   read -sp '' promptvar
+  echo ''
   mount /dev/vg1_demo/lv1_demo /mnt/vol1
   echo ''
 
-  echo 'mount /dev/vg1_demo/lv2_demo /mnt/vol2'
+  echo -n 'mount /dev/vg1_demo/lv2_demo /mnt/vol2'
   read -sp '' promptvar
+  echo ''
   mount /dev/vg1_demo/lv2_demo /mnt/vol2
   echo ''
 
-  echo 'df'
+  echo -n 'df'
   read -sp '' promptvar
+  echo ''
   df
   echo ''  
   
