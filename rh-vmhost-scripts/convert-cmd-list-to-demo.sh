@@ -1,14 +1,6 @@
 #!/bin/bash
 
 if [[ -f $1 ]];then 
-  echo ''
-  echo 'me=$(whoami)'
-  echo ''
-  echo 'if [[ $me != root ]];then'
-  echo '  echo \'Usage: Must be run as root on serverb\''
-  echo '  exit 1'
-  echo 'fi'
-  echo ''
   cat $1 | grep -v ^$ | while read line;do
     if [[ $line =~ \# ]];then 
       echo $line
