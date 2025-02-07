@@ -3,12 +3,13 @@
 me=$(whoami)
 if [[ $me != root ]];then
   echo 'Usage: Must be run as root on serverb'
+  exit 1
 fi
 
 this_machine=$(hostname)
 if [[ $this_machine != servera ]];then
   echo 'Usage: Must be run as root on serverb'
-  exit1
+  exit2
 fi
 
 echo "dnf install -y nfs-utils"
