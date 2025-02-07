@@ -1,3 +1,11 @@
+#!/bin/bash
+
+me=$(whoami)
+if [[ $me != root ]];then
+  echo 'Usage: Must be run as root on serverb'
+  exit 1
+fi
+
 # Check the Status of firewalld:
 sudo systemctl status firewalld
 
