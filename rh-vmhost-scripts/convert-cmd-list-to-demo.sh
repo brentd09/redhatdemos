@@ -10,8 +10,9 @@ if [[ -f $1 ]];then
       echo $line
       continue
     fi        
-    echo "echo \"$line\""
+    echo "echo -n \"$line\""
     echo "read -sp '' promptvar"
+    echo ''
     echo $line
     echo "echo ''"
     echo ''
