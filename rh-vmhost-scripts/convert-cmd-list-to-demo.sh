@@ -12,7 +12,7 @@ if [[ -f $1 ]];then
     fi        
     echo "echo -n \"$line\""
     echo "read -sp '' promptvar"
-    echo ''
+    echo "echo ''"
     echo $line
     echo "echo ''"
     echo ''
