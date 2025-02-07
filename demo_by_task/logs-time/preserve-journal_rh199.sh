@@ -6,75 +6,89 @@ if [[ "$WHO" != "root" ]];then
   exit 1
 fi 
 
-echo "mkdir -p /var/log/journal"
+echo -n "mkdir -p /var/log/journal"
 read -sp '' promptvar
+echo ''
 mkdir -p /var/log/journal
 echo ''
 
-echo "vim /etc/systemd/journald.conf"
+echo -n "vim /etc/systemd/journald.conf"
 read -sp '' promptvar
+echo ''
 vim /etc/systemd/journald.conf
 echo ''
 
-echo "less /etc/systemd/journald.conf"
+echo -n "less /etc/systemd/journald.conf"
 read -sp '' promptvar
+echo ''
 less /etc/systemd/journald.conf
 echo ''
 
-echo "systemctl restart systemd-journald"
+echo -n "systemctl restart systemd-journald"
 read -sp '' promptvar
+echo ''
 systemctl restart systemd-journald
 echo ''
 
-echo "ls /var/log/journal"
+echo -n "ls /var/log/journal"
 read -sp '' promptvar
+echo ''
 ls /var/log/journal
 echo ''
 
 echo If the persistent logs are not automatically created
 echo ''
-echo "grep 'Storage=' /etc/systemd/journald.conf"
+echo -n "grep 'Storage=' /etc/systemd/journald.conf"
 read -sp '' promptvar
+echo ''
 grep 'Storage=' /etc/systemd/journald.conf
 echo ''
 
-echo "chown root:systemd-journal /var/log/journal/"
+echo -n "chown root:systemd-journal /var/log/journal/"
 read -sp '' promptvar
+echo ''
 chown root:systemd-journal /var/log/journal/
 echo 'Should show and uncommented Storage=Persistent'
 echo ''
 
-echo "chmod 2775 /var/log/journal"
+echo -n "chmod 2775 /var/log/journal"
 read -sp '' promptvar
+echo ''
 chmod 2775 /var/log/journal
 echo ''
 
-echo "systemctl restart systemd-journald"
+echo -n "systemctl restart systemd-journald"
 read -sp '' promptvar
+echo ''
 systemctl restart systemd-journald
 echo ''
 
-echo "journalctl --flush"
+echo -n "journalctl --flush"
 read -sp '' promptvar
+echo ''
 journalctl --flush
 echo ''
 
-echo "journalctl --verify"
+echo -n "journalctl --verify"
 read -sp '' promptvar
+echo ''
 journalctl --verify
 echo ''
 
-echo "logger Testing the persistent journal"
+echo -n "logger Testing the persistent journal"
 read -sp '' promptvar
+echo ''
 logger Testing the persistent journal
 echo ''
 
-echo "journalctl -n 10"
+echo -n "journalctl -n 10"
 read -sp '' promptvar
+echo ''
 journalctl -n 10
 echo ''
 
-echo "ls /var/log/journal"
+echo -n "ls /var/log/journal"
 read -sp '' promptvar
+echo ''
 ls /var/log/journal
 echo ''
