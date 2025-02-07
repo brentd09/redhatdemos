@@ -31,6 +31,12 @@ Group=root
 WantedBy=multi-user.target
 EOF1
 
+# vi the /etc/systemd/system/myscript.service
+echo -n "vim  /etc/systemd/system/myscript.service"
+read -sp '' promptvar
+echo  ''
+vim /etc/systemd/system/myscript.service
+echo  ''
 
 # Set up the script for the UNIT FILE
 cat << EOF2 > /usr/bin/myscript.sh
@@ -41,7 +47,34 @@ while true; do
 done
 EOF2
 
-chmod 777 /usr/bin/myscript.sh
+# vi /usr/bin/myscript.sh
+echo -n "vim /usr/bin/myscript.sh"
+read -sp '' promptvar
+echo  ''
+vim /usr/bin/myscript.sh
+echo  ''
+
+# chmod 755 /usr/bin/myscript.sh
+echo -n "chmod 755 /usr/bin/myscript.sh"
+read -sp '' promptvar
+echo  ''
+chmod 755 /usr/bin/myscript.sh
+echo  ''
+
+# enable unit file
+echo -n "systemctl enable --now myscript.service"
+read -sp '' promptvar
+echo  ''
+systemctl enable --now myscript.service
+echo  ''
+
+# tail follow the log file
+echo -n "tail -f /usr/tmp/service.log"
+read -sp '' promptvar
+echo  ''
+tail -f /usr/tmp/service.log
+echo  ''
+
 ;;
   "--remove" )
     status=$(systemctl status myscript.service &> /dev/null )
@@ -60,3 +93,4 @@ systemctl daemon-reload
 echo 'Check out the following files:'
 echo '/etc/systemd/system/myscript.service'
 echo '/usr/bin/myscript.sh'
+
