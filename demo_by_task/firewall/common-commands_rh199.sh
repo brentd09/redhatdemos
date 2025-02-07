@@ -8,7 +8,7 @@ if [[ $me != root ]];then
   exit 1
 fi
 
-NIC=$(ip link show | grep -P '^\d+:' | sed 's/ //g' | grep -vi loopback | ask -F: '{print $2}')
+NIC=$(ip link show | grep -P '^\d+:' | sed 's/ //g' | grep -vi loopback | awk -F: '{print $2}')
 
 # Check the Status of firewalld:
 echo "sudo systemctl status firewalld"
