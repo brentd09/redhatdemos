@@ -105,9 +105,9 @@ sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Remove a Port from a Zone:
-echo "sudo firewall-cmd --zone=public --add-port=389/tcp"
+echo "sudo firewall-cmd --zone=public --remove-port=389/tcp"
 read -sp '' promptvar
-sudo firewall-cmd --zone=public --add-port=389/tcp
+sudo firewall-cmd --zone=public --remove-port=389/tcp
 echo ''
 
 # List All Rules in a Specific Zone:
