@@ -74,10 +74,22 @@ read -sp '' promptvar
 sudo firewall-cmd --zone=public --add-service=http
 echo ''
 
+# List All Rules in a Specific Zone:
+echo "sudo firewall-cmd --zone=public --list-all"
+read -sp '' promptvar
+sudo firewall-cmd --zone=public --list-all
+echo ''
+
 # Remove a Service from a Zone:
 echo "sudo firewall-cmd --zone=public --remove-service=http"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --remove-service=http
+echo ''
+
+# List All Rules in a Specific Zone:
+echo "sudo firewall-cmd --zone=public --list-all"
+read -sp '' promptvar
+sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Add a Port to a Zone:
@@ -86,10 +98,22 @@ read -sp '' promptvar
 sudo firewall-cmd --zone=public --add-port=389/tcp
 echo ''
 
+# List All Rules in a Specific Zone:
+echo "sudo firewall-cmd --zone=public --list-all"
+read -sp '' promptvar
+sudo firewall-cmd --zone=public --list-all
+echo ''
+
 # Remove a Port from a Zone:
 echo "sudo firewall-cmd --zone=public --add-port=389/tcp"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --add-port=389/tcp
+echo ''
+
+# List All Rules in a Specific Zone:
+echo "sudo firewall-cmd --zone=public --list-all"
+read -sp '' promptvar
+sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Make Rules Permanent:
@@ -114,12 +138,6 @@ echo ''
 echo "sudo firewall-cmd --zone=public --list-rich-rules"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-rich-rules
-echo ''
-
-# Remove a Rich Rule:
-echo "sudo firewall-cmd --zone=public --remove-rich-rule=\'rule family=\"ipv4\" source address=\"192.168.111.11\" service name=\"http\" accept\'"
-read -sp '' promptvar
-sudo firewall-cmd --zone=public --remove-rich-rule='rule family="ipv4" source address="192.168.111.11" service name="http" accept'
 echo ''
 
 # Enable Logging for a Zone:
