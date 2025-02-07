@@ -1,43 +1,51 @@
 #!/bin/bash
-echo "dnf list --installed"
+echo -n "dnf list --installed"
 read -sp '' promptvar
+echo ''
 dnf list --installed
 echo ''
 
-echo "dnf list --available"
+echo -n "dnf list --available"
 read -sp '' promptvar
+echo ''
 dnf list --available
 echo ''
 
-echo "dnf info zip"
+echo -n "dnf info zip"
 read -sp '' promptvar
+echo ''
 dnf info zip
 echo ''
 
-echo "dnf provides zip"
+echo -n "dnf provides zip"
 read -sp '' promptvar
+echo ''
 dnf provides zip
 echo ''
 
 # Search for a keyword
-echo "dnf search zip"
+echo -n "dnf search zip"
 read -sp '' promptvar
+echo ''
 dnf search zip
 echo ''
 
-echo "dnf update"
+echo -n "dnf update"
 read -sp '' promptvar
+echo ''
 dnf update
 echo ''
 
 # List the files installed with from this rpm
-echo "dnf repoquery zip --list"
+echo -n "dnf repoquery zip --list"
 read -sp '' promptvar
+echo ''
 dnf repoquery zip --list
 echo ''
 
-echo "dnf repoquery zip --location"
+echo -n "dnf repoquery zip --location"
 read -sp '' promptvar
+echo ''
 dnf repoquery zip --location
 echo ''
 
