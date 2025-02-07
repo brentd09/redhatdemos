@@ -11,85 +11,98 @@ if [[ $this_machine != serverb ]];then
   exit1
 fi
 
-echo "dnf install -y nfs-utils"
+echo -n "dnf install -y nfs-utils"
 read -sp '' promptvar
+echo ''
 dnf install -y nfs-utils
 echo ''
 
-echo "systemctl enable --now nfs-server rpcbind nfs-mountd"
+echo -n "systemctl enable --now nfs-server rpcbind nfs-mountd"
 read -sp '' promptvar
+echo ''
 systemctl enable --now nfs-server rpcbind nfs-mountd
 echo ''
 
-echo "systemctl status nfs-server"
+echo -n "systemctl status nfs-server"
 read -sp '' promptvar
+echo ''
 systemctl status nfs-server
 echo ''
 
-echo "firewall-cmd --permanent --add-service=nfs"
+echo -n "firewall-cmd --permanent --add-service=nfs"
 read -sp '' promptvar
+echo ''
 firewall-cmd --permanent --add-service=nfs
 echo ''
 
-echo "firewall-cmd --permanent --add-service=rpc-bind"
+echo -n "firewall-cmd --permanent --add-service=rpc-bind"
 read -sp '' promptvar
+echo ''
 firewall-cmd --permanent --add-service=rpc-bind
 echo ''
 
-echo "firewall-cmd --permanent --add-service=mountd"
+echo -n "firewall-cmd --permanent --add-service=mountd"
 read -sp '' promptvar
+echo ''
 firewall-cmd --permanent --add-service=mountd
 echo ''
 
-echo "firewall-cmd --reload"
+echo -n "firewall-cmd --reload"
 read -sp '' promptvar
+echo ''
 firewall-cmd --reload
 echo ''
 
-echo "firewall-cmd --list-all"
+echo -n "firewall-cmd --list-all"
 read -sp '' promptvar
+echo ''
 firewall-cmd --list-all
 echo ''
 
-echo ""
-read -sp '' promptvar
+
 
 echo ''
-
-echo "mkdir -p /srv/nfs_share"
+echo -n "mkdir -p /srv/nfs_share"
 read -sp '' promptvar
+echo ''
 mkdir -p /srv/nfs_share
 echo ''
 
-echo "chown -R nobody:nobody /srv/nfs_share"
+echo -n "chown -R nobody:nobody /srv/nfs_share"
 read -sp '' promptvar
+echo ''
 chown -R nobody:nobody /srv/nfs_share
 echo ''
 
-echo "chmod 777 /srv/nfs_share"
+echo -n "chmod 777 /srv/nfs_share"
 read -sp '' promptvar
+echo ''
 chmod 777 /srv/nfs_share
 echo ''
 
-echo '/srv/nfs_share 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
+echo -n '/srv/nfs_share 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
 # Refresh exports
 echo "exportfs -r"
 read -sp '' promptvar
+echo ''
 exportfs -r
 echo ''
 
-echo "systemctl restart nfs-server.service"
+echo -n "systemctl restart nfs-server.service"
 read -sp '' promptvar
+echo ''
 systemctl restart nfs-server.service
 echo ''
 
 # Show exports verbose option
-echo "exportfs -v"
+echo -n "exportfs -v"
 read -sp '' promptvar
+echo ''
 exportfs -v
 echo ''
 
-echo "tree /srv/"
+echo -n "tree /srv/"
 read -sp '' promptvar
+echo ''
 tree /srv/
 echo ''
