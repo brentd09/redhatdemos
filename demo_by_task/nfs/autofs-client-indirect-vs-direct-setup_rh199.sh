@@ -32,6 +32,9 @@ read -sp '' promptvar
 echo 'project1 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project1' > /etc/auto.projects
 echo 'project2 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project2' >> /etc/auto.projects
 echo 'project3 -fstype=nfs,rw,nosuid,nodev serverb:/srv/project3' >> /etc/auto.projects
+echo '# Because these three exports are sub-directories of /srv on serverb '  >> /etc/auto.projects
+echo '# the three lines could be replace with the following '  >> /etc/auto.projects
+echo '# * -fstype=nfs,rw,nosuid,nodev serverb:/srv/&'  >> /etc/auto.projects
 vi /etc/auto.projects
 
 echo "mkdir /projects"
