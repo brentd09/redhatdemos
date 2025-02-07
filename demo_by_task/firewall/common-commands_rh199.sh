@@ -11,149 +11,149 @@ fi
 NIC=$(ip link show | grep -P '^\d+:' | sed 's/ //g' | grep -vi loopback | awk -F: '{print $2}')
 
 # Check the Status of firewalld:
-echo -n "sudo systemctl status firewalld"
+echo -n "systemctl status firewalld"
 read -sp '' promptvar
 sudo systemctl status firewalld
 echo  ''
 
 # Start/Stop/Restart firewalld:
-echo -n "sudo systemctl start firewalld"
+echo -n "systemctl start firewalld"
 read -sp '' promptvar
 sudo systemctl start firewalld
 echo ''
 
-echo -n "sudo systemctl stop firewalld"
+echo -n "systemctl stop firewalld"
 read -sp '' promptvar
 sudo systemctl stop firewalld
 echo ''
 
-echo -n "sudo systemctl restart firewalld"
+echo -n "systemctl restart firewalld"
 read -sp '' promptvar
 sudo systemctl restart firewalld
 echo ''
 
 # Get Active Zones:
-echo -n "sudo firewall-cmd --get-active-zones"
+echo -n "firewall-cmd --get-active-zones"
 read -sp '' promptvar
 sudo firewall-cmd --get-active-zones
 echo -n ''
 
 # Get Default Zone:
-echo -n "sudo firewall-cmd --get-default-zone"
+echo -n "firewall-cmd --get-default-zone"
 read -sp '' promptvar
 sudo firewall-cmd --get-default-zone
 echo   ''
 
 # List All Zones:
-echo -n "sudo firewall-cmd --get-zones"
+echo -n "firewall-cmd --get-zones"
 read -sp '' promptvar
 sudo firewall-cmd --get-zones
 echo   ''
 
 # List All Rules in a Specific Zone:
-echo -n "sudo firewall-cmd --zone=public --list-all"
+echo -n "firewall-cmd --zone=public --list-all"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-all
 echo  ''
 
 # Change the Zone of an Interface:
-echo -n "sudo firewall-cmd --zone=public --change-interface=$NIC"
+echo -n "firewall-cmd --zone=public --change-interface=$NIC"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --change-interface=$NIC
 echo  ''
 
 # Set Default Zone:
-echo -n "sudo firewall-cmd --set-default-zone=public"
+echo -n "firewall-cmd --set-default-zone=public"
 read -sp '' promptvar
 sudo firewall-cmd --set-default-zone=public
 echo  ''
 
 # Add a Service to a Zone:
-echo -n "sudo firewall-cmd --zone=public --add-service=http"
+echo -n "firewall-cmd --zone=public --add-service=http"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --add-service=http
 echo   ''
 
 # List All Rules in a Specific Zone:
-echo -n "sudo firewall-cmd --zone=public --list-all"
+echo -n "firewall-cmd --zone=public --list-all"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-all
 echo  ''
 
 # Remove a Service from a Zone:
-echo -n "sudo firewall-cmd --zone=public --remove-service=http"
+echo -n "firewall-cmd --zone=public --remove-service=http"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --remove-service=http
 echo ''
 
 # List All Rules in a Specific Zone:
-echo -n "sudo firewall-cmd --zone=public --list-all"
+echo -n "firewall-cmd --zone=public --list-all"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-all
 echo  ''
 
 # Add a Port to a Zone:
-echo -n "sudo firewall-cmd --zone=public --add-port=389/tcp"
+echo -n "firewall-cmd --zone=public --add-port=389/tcp"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --add-port=389/tcp
 echo  ''
 
 # List All Rules in a Specific Zone:
-echo -n "sudo firewall-cmd --zone=public --list-all"
+echo -n "firewall-cmd --zone=public --list-all"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Remove a Port from a Zone:
-echo -n "sudo firewall-cmd --zone=public --remove-port=389/tcp"
+echo -n "firewall-cmd --zone=public --remove-port=389/tcp"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --remove-port=389/tcp
 echo ''
 
 # List All Rules in a Specific Zone:
-echo -n "sudo firewall-cmd --zone=public --list-all"
+echo -n "firewall-cmd --zone=public --list-all"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Make Rules Permanent:
-echo -n "sudo firewall-cmd --zone=public --add-service=http --permanent"
+echo -n "firewall-cmd --zone=public --add-service=http --permanent"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --add-service=http --permanent
 echo ''
 
 # List All Rules in a Specific Zone:
-echo -n "sudo firewall-cmd --zone=public --list-all"
+echo -n "firewall-cmd --zone=public --list-all"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Reload Firewall Rules:
-echo -n "sudo firewall-cmd --reload"
+echo -n "firewall-cmd --reload"
 read -sp '' promptvar
 sudo firewall-cmd --reload
 echo ''
 
 # List All Rules in a Specific Zone:
-echo -n "sudo firewall-cmd --zone=public --list-all"
+echo -n "firewall-cmd --zone=public --list-all"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-all
 echo ''
 
 # Add Rich Rules:
-echo -n "sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.1.50" service name="http" accept'"
+echo -n "firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.1.50" service name="http" accept'"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.1.50" service name="http" accept'
 echo ''
 
 # List All Rich Rules:
-echo -n "sudo firewall-cmd --zone=public --list-rich-rules"
+echo -n "firewall-cmd --zone=public --list-rich-rules"
 read -sp '' promptvar
 sudo firewall-cmd --zone=public --list-rich-rules
 echo ''
 
 # Check Firewall Logs:
-echo -n "sudo journalctl -f"
+echo -n "journalctl -f"
 read -sp '' promptvar
 sudo journalctl -f
 echo ''
