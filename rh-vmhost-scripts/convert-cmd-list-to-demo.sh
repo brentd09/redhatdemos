@@ -1,7 +1,6 @@
 #!/bin/bash
 
 if [[ -f $1 ]];then 
-  echo \#!/bin/bash
   echo ''
   echo 'me=$(whoami)'
   echo ''
