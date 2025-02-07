@@ -1,52 +1,61 @@
 #!/bin/bash
-echo "timedatectl"
+echo -n "timedatectl"
 read -sp '' promptvar
+echo ''
 timedatectl
 echo ''
 
-echo "timedatectl --list-timezones"
+echo -n "timedatectl --list-timezones"
 read -sp '' promptvar
+echo ''
 timedatectl --list-timezones
 echo ''
 
-echo "timedatectl --list-timezones | grep -i australia"
+echo -n "timedatectl --list-timezones | grep -i australia"
 read -sp '' promptvar
+echo ''
 timedatectl --list-timezones | grep -i australia
 echo ''
 
-echo "timedatectl set-timezone Australia/Brisbane"
+echo -n "timedatectl set-timezone Australia/Brisbane"
 read -sp '' promptvar
+echo ''
 timedatectl set-timezone Australia/Brisbane
 echo ''
 
-echo "timedatectl"
+echo -n "timedatectl"
 read -sp '' promptvar
+echo ''
 timedatectl
 echo ''
 
-echo "timedatectl set-ntp true"
+echo -n "timedatectl set-ntp true"
 read -sp '' promptvar
+echo ''
 timedatectl set-ntp true
 echo ''
 
 # chronyd time sync service
-echo "vim /etc/chrony.conf"
+echo -n "vim /etc/chrony.conf"
 read -sp '' promptvar
+echo ''
 vim /etc/chrony.conf
 echo ''
 
-echo "systemctl restart chronyd.service"
+echo -n "systemctl restart chronyd.service"
 read -sp '' promptvar
+echo ''
 systemctl restart chronyd.service
 echo ''
 
-echo To force the ntp timesync
+echo -n To force the ntp timesync
 echo "chronyc makestep"
 read -sp '' promptvar
+echo ''
 chronyc makestep
 echo ''
 
-echo "chronyc sources -v"
+echo -n "chronyc sources -v"
 read -sp '' promptvar
 chronyc sources -v
 echo ''
