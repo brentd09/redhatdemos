@@ -67,6 +67,13 @@ if [[ $hostnm =~ servera ]]; then
     echo ''
   done
   echo ''
+
+  echo List the Partitions 
+  echo -n "lsblk -o PATH,PARTTYPENAME,UUID"
+  read -sp '' promptvar
+  lsblk -o PATH,PARTTYPENAME,UUID
+  echo ''
+
   
   echo 'Making the swap partitions persistent'
   echo 'Adding the swap partitions to the /etc/fstab file'
