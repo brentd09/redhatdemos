@@ -9,19 +9,14 @@ fi
 # Make sure we are on the right server
 hostnm=$(hostname)
 if [[ $hostnm =~ servera ]]; then
-  echo 'Define the disk and assign it the variable DISK  (e.g., /dev/sda)'
-  echo -n 'DISK="/dev/vdb"'
-  read -sp '' promptvar
-  echo ''
   DISK="/dev/vdb"
-  echo ''
-  
-  # Automate partitioning of using parted
+
+# Automate partitioning of using parted
   
   diskparttype=$(parted -sm $DISK print 2> /dev/null | paste -sd ' '| grep vdb)
   if [[ $diskparttype =~ 'unknown' ]];then 
     echo 'Create a GPT partition table'
-    echo -n 'parted $DISK --script mklabel gpt'
+    echo -n "parted $DISK --script mklabel gpt"
     read -sp '' promptvar
     echo ''
     parted $DISK --script mklabel gpt
@@ -29,21 +24,21 @@ if [[ $hostnm =~ servera ]]; then
   fi
   
   echo Create the first partition of 500 MB
-  echo -n 'parted $DISK --script mkpart primary ext4 0% 500MB'
+  echo -n "parted $DISK --script mkpart primary ext4 0% 500MB"
   read -sp '' promptvar
   echo ''
   parted $DISK --script mkpart primary ext4 0% 500MB
   echo ''
   
   echo 'Create the second partition'
-  echo -n 'parted $DISK --script mkpart primary ext4 500MB 2000MB'
+  echo -n "parted $DISK --script mkpart primary ext4 500MB 2000MB"
   read -sp '' promptvar
   echo ''
   parted $DISK --script mkpart primary ext4 500MB 2000MB
   echo ''
   
   echo 'Print the partition table to verify'
-  echo -n 'parted $DISK --script print'
+  echo -n "parted $DISK --script print"
   read -sp '' promptvar
   echo ''
   parted $DISK --script print
