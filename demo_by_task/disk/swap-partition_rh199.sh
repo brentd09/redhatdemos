@@ -56,12 +56,21 @@ if [[ $hostnm =~ servera ]]; then
   echo '  mkswap $device'
   echo '  swapon $device'
   echo -n 'done'
-  read -sp '' promptvar
+
   echo ''
   devnames=$(lsblk -o PATH,PARTTYPENAME | grep swap | awk '{print $1}')
   for device in $devnames;do
+    echo -n "mkswap $device"
+    read -sp '' promptvar
+    echo ''
     mkswap $device &> /dev/null
+    echo ''
+
+    echo -n "swapon $device"
+    read -sp '' promptvar
+    echo ''
     swapon $device &> /dev/null
+    echo ''
   done
   echo ''
   
@@ -73,7 +82,7 @@ if [[ $hostnm =~ servera ]]; then
   rm -f /etc/fstab.new
   lsblk -o PARTTYPENAME,UUID,PATH | grep '^Linux swap' | awk 'BEGIN{pri=3}{print "UUID="$3"   swap   swap   pri="pri++"   0 0"}' >> /etc/fstab
   echo ''
-  cat /etc/fstab 
+  vim /etc/fstab 
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
