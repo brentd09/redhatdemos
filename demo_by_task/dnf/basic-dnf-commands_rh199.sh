@@ -1,14 +1,15 @@
 #!/bin/bash
-echo -n "dnf list --installed"
-read -sp '' promptvar
-echo ''
-dnf list --installed
-echo ''
 
 echo -n "dnf list --available"
 read -sp '' promptvar
 echo ''
 dnf list --available
+echo ''
+
+echo -n "dnf list --installed"
+read -sp '' promptvar
+echo ''
+dnf list --installed
 echo ''
 
 echo -n "dnf info zip"
