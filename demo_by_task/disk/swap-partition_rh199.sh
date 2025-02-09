@@ -52,7 +52,7 @@ if [[ $hostnm =~ servera ]]; then
   lsblk -o PATH,PARTTYPENAME
   echo ''
   
-  devnames=$(lsblk -o PATH,PARTTYPENAME | grep swap | awk '{print $1}')
+  devnames=$(lsblk -o PATH,PARTTYPENAME | grep 'Linux swap' | awk '{print $1}')
   for device in $devnames;do
     echo -n "mkswap $device"
     read -sp '' promptvar
