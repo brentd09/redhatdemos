@@ -4,10 +4,10 @@ echo ''
 dnf install httpd
 echo ''
 
-echo -n "grep SUBDEBUG /var/log/def.rpm.log"
+echo -n "grep SUBDEBUG /var/log/dnf.rpm.log"
 read -sp '' promptvar
 echo ''
-grep SUBDEBUG /var/log/def.rpm.log
+grep SUBDEBUG /var/log/dnf.rpm.log
 echo ''
 
 echo -n "dnf history"
