@@ -11,9 +11,23 @@ echo '  date >> /usr/tmp/my_date.log' >> /etc/cron.daily/log-datetime.sh
 echo '  sleep 2' >> /etc/cron.daily/log-datetime.sh
 echo 'done' >> /etc/cron.daily/log-datetime.sh
 
+echo -n 'cat /etc/cron.daily/log-datetime.sh'
+read -sp '' promptvar
+echo ''
+cat /etc/cron.daily/log-datetime.sh
+echo ''
 
-
-chmod 777 /etc/cron.daily/log-datetime.sh
+echo -n 'chmod 755 /etc/cron.daily/log-datetime.sh'
+read -sp '' promptvar
+echo ''
+chmod 755 /etc/cron.daily/log-datetime.sh
+echo ''
 
 echo Forcing anacron to run now
+echo -n 'anacron -fnd'
+read -sp '' promptvar
+echo ''
 anacron -fnd
+echo ''
+
+
