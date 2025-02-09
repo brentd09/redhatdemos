@@ -8,23 +8,27 @@ sudo -u devops sleep 10000 & &> /dev/null
 sudo -u devops sleep 10000 & &> /dev/null
 echo ''
 
-echo 'ps -ef | grep devops'
+echo -n 'ps -ef | grep devops'
 read -sp '' promptvar
+echo ''
 ps -ef | grep '^devops'
 echo ''
 
-echo 'pgrep -u devops'
+echo -n 'pgrep -u devops'
 read -sp '' promptvar
+echo ''
 pgrep -u devops
 echo ''
 
-echo 'pkill -SIGKILL -u devops'
+echo -n 'pkill -SIGKILL -u devops'
 read -sp '' promptvar
+echo ''
 pkill -SIGKILL -u devops &> /dev/null
 wait
 echo ''
 
-echo 'pgrep -u devops'
+echo -n 'pgrep -u devops'
 read -sp '' promptvar
+echo ''
 pgrep -u devops
 echo ''
