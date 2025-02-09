@@ -22,11 +22,7 @@ echo ''
 dnf history | grep 'install httpd'
 echo ''
 
-echo -n "history_num=$(dnf history | grep 'install httpd' | awk '{print $1}')"
-read -sp '' promptvar
-echo ''
 history_num=$(dnf history | grep 'install httpd' | awk '{print $1}')
-echo ''
 
 echo -n "dnf history undo $history_num"
 read -sp '' promptvar
