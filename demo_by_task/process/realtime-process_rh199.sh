@@ -7,8 +7,14 @@ if [[ $me != 'root' ]]; then
 fi
 
 echo Run a process as a real time priority
-echo 'chrt -f 21 sleep 1000 &'
+echo -n 'chrt -f 21 sleep 1000 &'
 read -sp '' promptvar
+echo ''
 chrt -f 21 sleep 1000 &
+echo ''
 
+echo -n 'top -p $!'
+read -sp '' promptvar
+echo ''
 top -p $!
+echo ''
