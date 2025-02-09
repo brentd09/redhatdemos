@@ -17,7 +17,7 @@ cat /etc/tmpfiles.d/myapp.conf
 echo ''
 
 echo 'Check to see if the myapp directory exists, it will probably not exist yet'
-echo 'tree /usr/tmp'
+echo -n 'tree /usr/tmp'
 read -sp '' promptvar
 echo ''
 tree /usr/tmp
