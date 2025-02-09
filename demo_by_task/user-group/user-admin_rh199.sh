@@ -1,26 +1,30 @@
 #!/bin/bash
 
 echo Add new user 
-echo useradd demouser1
+echo -n 'useradd demouser1'
 read -sp '' promptvar
+echo ''
 sudo useradd demouser1
 echo ''
 
 echo Add user to the wheel group
-echo usermod -aG wheel demouser1
+echo -n 'usermod -aG wheel demouser1'
 read -sp '' promptvar
+echo ''
 sudo usermod -aG wheel demouser1
 echo ''
 
 echo Determine which groups a user is a member of
-echo id demouser1
+echo -n 'id demouser1'
 read -sp '' promptvar
+echo ''
 id demouser1
 echo ''
 
 echo Check user account settings
-echo chage -l demouser1
+echo -n 'chage -l demouser1'
 read -sp '' promptvar
+echo ''
 sudo usermod -aG wheel demouser1
 sudo chage -l demouser1
 echo ''
@@ -33,28 +37,32 @@ echo After Password Expires, Number of Days Before Account Lockout: 3 Days
 echo Number of Days Before Expiry That Warnings Start: 7 days
 echo Date When Account Will be Disabled: 2027-12-30
 echo ''
-echo chage -m 2 -M 40 -I 3 -W 7 -E '2027-12-30' demouser1
+echo -n 'chage -m 2 -M 40 -I 3 -W 7 -E '2027-12-30' demouser1'
 read -sp '' promptvar
+echo ''
 sudo chage -m 2 -M 40 -I 3 -W 7 -E '2027-12-30' demouser1
 sudo chage -l demouser1
 echo ''
 
 echo Force password change on next login
-echo chage -d 0 demouser1
+echo -n 'chage -d 0 demouser1'
 read -sp '' promptvar
+echo ''
 sudo chage -d 0 demouser1
 echo ''
 
 # These two methods do the same thing, they place an ! at the start of the password hash in the /etc/shadow file
 echo Lock user account
 echo passwd -l demouser1 or
-echo usermod -L demouser1
+echo -n 'usermod -L demouser1'
 read -sp '' promptvar
+echo ''
 sudo usermod -L demouser1
 echo ''
 
 echo List the default login settings
-echo less /etc/login.defs
+echo -n 'less /etc/login.defs'
 read -sp '' promptvar
+echo ''
 less /etc/login.defs
 echo ''
