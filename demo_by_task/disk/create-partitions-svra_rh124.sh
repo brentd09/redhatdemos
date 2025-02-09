@@ -18,7 +18,7 @@ if [[ $hostnm =~ servera ]]; then
   
   # Automate partitioning of using parted
   
-  diskparttype=$(parted -sm $DISK print)
+  diskparttype=$(parted -sm $DISK print | grep vdb)
   if [[ $diskparttype =~ 'unknown' ]];then 
     echo 'Create a GPT partition table'
     echo -n 'parted $DISK --script mklabel gpt'
