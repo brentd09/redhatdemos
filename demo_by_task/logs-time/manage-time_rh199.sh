@@ -5,16 +5,16 @@ echo ''
 timedatectl
 echo ''
 
-echo -n "timedatectl --list-timezones"
+echo -n "timedatectl list-timezones"
 read -sp '' promptvar
 echo ''
-timedatectl --list-timezones
+timedatectl list-timezones
 echo ''
 
-echo -n "timedatectl --list-timezones | grep -i australia"
+echo -n "timedatectl list-timezones | grep -i australia"
 read -sp '' promptvar
 echo ''
-timedatectl --list-timezones | grep -i australia
+timedatectl list-timezones | grep -i australia
 echo ''
 
 echo -n "timedatectl set-timezone Australia/Brisbane"
