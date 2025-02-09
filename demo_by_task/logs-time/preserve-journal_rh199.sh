@@ -12,6 +12,7 @@ echo ''
 mkdir -p /var/log/journal
 echo ''
 
+echo "Make the journal logs persistent"
 echo -n "vim /etc/systemd/journald.conf"
 read -sp '' promptvar
 echo ''
@@ -87,8 +88,8 @@ echo ''
 journalctl -n 10
 echo ''
 
-echo -n "ls /var/log/journal"
+echo -n "tree /var/log/journal"
 read -sp '' promptvar
 echo ''
-ls /var/log/journal
+tree /var/log/journal
 echo ''
