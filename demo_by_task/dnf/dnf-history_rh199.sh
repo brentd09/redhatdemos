@@ -16,12 +16,6 @@ echo ''
 dnf history
 echo ''
 
-echo -n "dnf history | grep 'install httpd' | head -n 1"
-read -sp '' promptvar
-echo ''
-dnf history | grep 'install httpd | head -n 1'
-echo ''
-
 history_num=$(dnf history | grep 'install httpd' | head -n 1  | awk '{print $1}')
 
 echo -n "dnf history undo $history_num"
