@@ -84,6 +84,12 @@ if [[ $hostnm =~ servera ]]; then
   lsblk -o PARTTYPENAME,UUID,PATH | grep '^Linux swap' | awk 'BEGIN{pri=3}{print "UUID="$3"   swap   swap   pri="pri++"   0 0"}' >> /etc/fstab
   echo ''
   vim /etc/fstab 
+
+  echo List the swap partitions 
+  echo -n "swapon"
+  read -sp '' promptvar
+  swapon
+  echo ''
 else 
   echo 1>&2 "You are on the wrong server, please do this from servera"
 fi
