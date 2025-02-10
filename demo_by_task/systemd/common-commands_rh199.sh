@@ -76,6 +76,36 @@ echo ''
 systemctl reload httpd
 echo ''
 
+echo -n "systemctl mask httpd"
+read -sp '' promptvar
+echo ''
+systemctl mask httpd
+echo ''
+
+echo -n "systemctl start httpd"
+read -sp '' promptvar
+echo ''
+systemctl start httpd
+echo ''
+
+echo -n "systemctl enable httpd"
+read -sp '' promptvar
+echo ''
+systemctl enable httpd
+echo ''
+
+echo -n "systemctl unmask httpd"
+read -sp '' promptvar
+echo ''
+systemctl unmask httpd
+echo ''
+
+echo -n "systemctl start httpd"
+read -sp '' promptvar
+echo ''
+systemctl start httpd
+echo ''
+
 # After configuring unit files and systemd configuration you need to run daemon-reload
 echo -n "systemctl daemon-reload"
 read -sp '' promptvar
