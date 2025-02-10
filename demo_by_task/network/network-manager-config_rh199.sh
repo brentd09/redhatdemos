@@ -119,3 +119,17 @@ read -sp '' promptvar
 echo ''
 ifconfig $DEVICE
 echo ''
+
+
+echo -n "nmcli conn delete demo1"
+read -sp '' promptvar
+echo ''
+nmcli conn delete demo1
+echo ''
+
+
+echo -n "nmcli conn show"
+read -sp '' promptvar
+echo ''
+nmcli conn show
+echo ''
