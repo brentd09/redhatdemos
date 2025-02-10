@@ -7,7 +7,7 @@ DNSIP=$(nmcli device show $DEVICE | grep DNS | head -n 1 | awk '{print $2}')
 
 NETOCT=$(echo $IPADDR | grep -Po '^(\d{1,3}\.){3}')
 FTHOCT=$(echo $IPADDR | grep -Po '\d{1,3}\/' | sed 's/\///g')
-NEWFTH=$((10 + $FTHOCT))
+NEWFTH=$(10 + $FTHOCT | bc)
 NTMASK=$(echo $IPADDR | grep -Po '\/\d{1,2}$')
 NEXTIP=$(echo ${NETOCT}${NEWFTH}${NTMASK})
 
