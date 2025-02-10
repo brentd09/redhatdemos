@@ -17,10 +17,10 @@ cat /etc/tmpfiles.d/myapp.conf
 echo ''
 
 echo 'Check to see if the myapp directory exists, it will probably not exist yet'
-echo -n 'tree /usr/tmp'
+echo -n 'tree /usr/tmp/myapp'
 read -sp '' promptvar
 echo ''
-tree /usr/tmp
+tree /usr/tmp/myapp
 echo ''
 
 echo 'Have systemd-tmpfiles create the files and directories we need'
@@ -53,7 +53,7 @@ systemd-tmpfiles --clean
 echo ''
 
 echo 'Check the tmp directory again, demofile.txt should be deleted'
-echo -n 'tree /usr/tmp'
+echo -n 'tree /usr/tmp/myapp'
 echo ''
 read -sp '' promptvar
-tree /usr/tmp
+tree /usr/tmp/myapp
