@@ -5,16 +5,18 @@ echo ''
 id
 echo ''
 
-echo -n "id devops"
+useradd demouser
+
+echo -n "id demouser"
 read -sp '' promptvar
 echo ''
 id devops
 echo ''
 
-echo -n "ls -ld ~/Downloads"
+echo -n "ls -ld ~demouser/Downloads"
 read -sp '' promptvar
 echo ''
-ls -ld ~/Downloads
+ls -ld ~demouser/Downloads
 echo ''
 
 
