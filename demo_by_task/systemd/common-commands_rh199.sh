@@ -10,11 +10,10 @@ if [[ $this_machine != servera ]];then
   echo 'Usage: Must be run as root on servera'
   exit1
 fi
-echo -n "systemctl install -y httpd"
-read -sp '' promptvar
-echo ''
-systemctl install -y httpd
-echo ''
+
+echo 'Installing httpd'
+dnf install -y httpd
+
 
 echo -n "systemctl list-units --type=service"
 read -sp '' promptvar
