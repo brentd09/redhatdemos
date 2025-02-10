@@ -59,6 +59,37 @@ echo ''
 ifconfig $DEVICE
 echo ''
 
+
+echo -n "nmcli connection mod con-name demo1 +ipv4.addresses 10.12.13.14 "
+read -sp '' promptvar
+echo ''
+nmcli connection mod con-name demo1 +ipv4.addresses 10.12.13.14
+echo ''
+
+echo -n "nmcli conn show"
+read -sp '' promptvar
+echo ''
+nmcli conn show
+echo ''
+
+echo -n "nmcli conn up demo1"
+read -sp '' promptvar
+echo ''
+nmcli conn up demo1
+echo ''
+
+echo -n "nmcli conn show"
+read -sp '' promptvar
+echo ''
+nmcli conn show
+echo ''
+
+echo -n "ifconfig $DEVICE"
+read -sp '' promptvar
+echo ''
+ifconfig $DEVICE
+echo ''
+
 echo -n "nmcli conn up $DEVICE"
 read -sp '' promptvar
 echo ''
