@@ -55,8 +55,13 @@ read -sp '' promptvar
 echo ''
 lsof /mnt/serverb_nfs/ 2> /dev/null
 echo ''
+
 echo -n "cd "
+read -sp '' promptvar
+echo ''
 cd
+echo ''
+
 echo -n "lsof /mnt/serverb_nfs/"
 read -sp '' promptvar
 echo ''
