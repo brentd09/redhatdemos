@@ -96,10 +96,11 @@ echo ''
 nmcli conn show
 echo ''
 
-echo -n "ifconfig $DEVICE"
+
+echo -n "nmcli conn show $DEVICE | grep -i 'ipv4\.addresses'"
 read -sp '' promptvar
 echo ''
-ifconfig $DEVICE
+nmcli conn show $DEVICE | grep -i 'ipv4\.addresses'
 echo ''
 
 
