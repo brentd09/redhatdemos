@@ -19,8 +19,9 @@ curl localhost/~student/
 echo ''
 
 echo Check selinux booleans
-echo getsebool -a
+echo -n 'getsebool -a'
 read -sp '' promptvar
+echo ''
 getsebool -a
 echo ''
 echo One of these booleans can allow the httpd web server to access home directories
@@ -28,21 +29,24 @@ getsebool -a | grep httpd_enable_homedirs
 echo ''
 
 echo Set the httpd_enable_homedirs on
-echo setsebool httpd_enable_homedirs on
+echo -n 'setsebool httpd_enable_homedirs on'
 read -sp '' promptvar
+echo ''
 sudo setsebool httpd_enable_homedirs on
 getsebool -a | grep httpd_enable_homedirs
 echo ''
 
 echo Edit the httpd userdir.conf to enable home dir access
-echo "vim -n -c '%s/UserDir disabled/#UserDir disabled/g' -c '%s/#UserDir public_html/UserDir public_html/g' -c 'wq' /etc/httpd/conf.d/userdir.conf"
+echo -n "vim -n -c '%s/UserDir disabled/#UserDir disabled/g' -c '%s/#UserDir public_html/UserDir public_html/g' -c 'wq' /etc/httpd/conf.d/userdir.conf"
 read -sp '' promptvar
-sudo vim -n -c '%s/UserDir disabled/#UserDir disabled/g' -c '%s/#UserDir public_html/UserDir public_html/g' -c 'wq' /etc/httpd/conf.d/userdir.conf
+echo ''
+vim -n -c '%s/UserDir disabled/#UserDir disabled/g' -c '%s/#UserDir public_html/UserDir public_html/g' -c 'wq' /etc/httpd/conf.d/userdir.conf
 echo ''
 
 echo Restaring the Apache web server
-echo sudo systemctl restart httpd
-sudo systemctl restart httpd
+echo systemctl restart httpd
+systemctl restart httpd
+echo ''
 
 echo Changing the permisions on the home dir 
 sudo chmod 711 ~
