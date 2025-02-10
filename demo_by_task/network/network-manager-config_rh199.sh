@@ -4,6 +4,10 @@ DEVICE=$(nmcli device show | grep GENERAL.DEVICE | grep -Pv '\blo\b$' | awk '{pr
 IPADDR=$(ip addr show $DEVICE | grep -P '\binet\b' | awk '{print $2}')
 DEFGW=$(ip route | grep default | awk '{print $3}' )
 
+NETOCT=$(echo $IPADDR | grep -Po '^(\d{1,3}\.){3}')
+FTHOCT=$(echo $IPADDR | grep -Po '\d{1,3}\/' | sed 's/\///g')
+NTMASK=$(echo $IPADDR | grep -Po '\d{1,2}$')
+
 nmcli device show
 nmcli device show $DEVICE 
 
