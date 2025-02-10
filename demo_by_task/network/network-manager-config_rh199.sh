@@ -72,6 +72,12 @@ echo ''
 nmcli conn show demo1 | grep -i 'ipv4\.addresses'
 echo ''
 
+echo -n "hostname -i"
+read -sp '' promptvar
+echo ''
+hostname -i
+echo ''
+
 echo -n "nmcli connection mod demo1 -ipv4.addresses 10.12.13.14 "
 read -sp '' promptvar
 echo ''
