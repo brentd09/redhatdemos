@@ -8,7 +8,7 @@ NETOCT=$(echo $IPADDR | grep -Po '^(\d{1,3}\.){3}')
 FTHOCT=$(echo $IPADDR | grep -Po '\d{1,3}\/' | sed 's/\///g')
 NEWFTH=$(expr $FTHOCT + 10)
 NTMASK=$(echo $IPADDR | grep -Po '\/\d{1,2}$')
-NEXTIP=$(echo ${{NETOCT}${NEWFTH}${NTMASK})
+NEXTIP=$(echo ${NETOCT}${NEWFTH}${NTMASK})
 
 nmcli device show
 nmcli device show $DEVICE 
