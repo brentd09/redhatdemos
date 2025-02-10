@@ -3,6 +3,7 @@
 me=$(whoami)
 if [[ $me != root ]];then
   echo 'Usage: Must be run as root'
+  exit 1
 fi
 
 echo -n "systemctl get-default"
