@@ -87,7 +87,7 @@ echo ''
 echo -n "nmcli conn show demo1 | grep -i 'ipv4\.addresses'"
 read -sp '' promptvar
 echo ''
-nmcli conn show demo1 | grep -i ipaddresses
+nmcli conn show demo1 | grep -i 'ipv4\.addresses'
 echo ''
 
 echo -n "nmcli conn up $DEVICE"
