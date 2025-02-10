@@ -11,18 +11,68 @@ NEWFTH=$(expr $FTHOCT + 10)
 NTMASK=$(echo $IPADDR | grep -Po '\/\d{1,2}$')
 NEXTIP=$(echo ${NETOCT}${NEWFTH}${NTMASK})
 
+echo -n "nmcli device show"
+read -sp '' promptvar
+echo ''
 nmcli device show
-nmcli device show $DEVICE 
+echo ''
 
+echo -n "nmcli device show $DEVICE"
+read -sp '' promptvar
+echo ''
+nmcli device show $DEVICE
+echo ''
+
+echo -n "nmcli conn show"
+read -sp '' promptvar
+echo ''
 nmcli conn show
+echo ''
+
+echo -n "nmcli connection add con-name demo1 ipv4.addresses $NEWIP ipv4.dns $DNSIP connection.interface-name $DEVICE type ethernet"
+read -sp '' promptvar
+echo ''
 nmcli connection add con-name demo1 ipv4.addresses $NEWIP ipv4.dns $DNSIP connection.interface-name $DEVICE type ethernet
-nmcli conn show
+echo ''
 
+echo -n "nmcli conn show"
+read -sp '' promptvar
+echo ''
+nmcli conn show
+echo ''
+
+echo -n "nmcli conn up demo1"
+read -sp '' promptvar
+echo ''
 nmcli conn up demo1
-nmcli conn show
-ifconfig $DEVICE
+echo ''
 
+echo -n "nmcli conn show"
+read -sp '' promptvar
+echo ''
+nmcli conn show
+echo ''
+
+echo -n "ifconfig $DEVICE"
+read -sp '' promptvar
+echo ''
+ifconfig $DEVICE
+echo ''
+
+echo -n "nmcli conn up $DEVICE"
+read -sp '' promptvar
+echo ''
 nmcli conn up $DEVICE
-nmcli conn show
-ifconfig $DEVICE
+echo ''
 
+echo -n "nmcli conn show"
+read -sp '' promptvar
+echo ''
+nmcli conn show
+echo ''
+
+echo -n "ifconfig $DEVICE"
+read -sp '' promptvar
+echo ''
+ifconfig $DEVICE
+echo ''
