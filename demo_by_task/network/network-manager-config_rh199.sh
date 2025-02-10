@@ -14,4 +14,15 @@ NEXTIP=$(echo ${NETOCT}${NEWFTH}${NTMASK})
 nmcli device show
 nmcli device show $DEVICE 
 
-nmcli connection add con-name demo1 ipv4.addresses $NEWIP ip
+nmcli conn show
+nmcli connection add con-name demo1 ipv4.addresses $NEWIP ipv4.dns $DNSIP connection.interface-name $DEVICE type ethernet
+nmcli conn show
+
+nmcli conn up demo1
+nmcli conn show
+ifconfig $DEVICE
+
+nmcli conn up $DEVICE
+nmcli conn show
+ifconfig $DEVICE
+
