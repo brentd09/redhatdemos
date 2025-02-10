@@ -60,10 +60,10 @@ ifconfig $DEVICE
 echo ''
 
 
-echo -n "nmcli connection mod con-name demo1 +ipv4.addresses 10.12.13.14 "
+echo -n "nmcli connection mod demo1 +ipv4.addresses 10.12.13.14 "
 read -sp '' promptvar
 echo ''
-nmcli connection mod con-name demo1 +ipv4.addresses 10.12.13.14
+nmcli connection mod demo1 +ipv4.addresses 10.12.13.14
 echo ''
 
 echo -n "nmcli conn show"
