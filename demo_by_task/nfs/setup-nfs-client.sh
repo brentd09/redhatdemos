@@ -45,7 +45,11 @@ echo ''
 
 echo 'When unmounting the NFS mount point, first check to see if anyone is using the NFS share'
 echo -n "cd /mnt/serverb_nfs/"
+read -sp '' promptvar
+echo ''
 cd /mnt/serverb_nfs/
+echo ''
+
 echo -n "lsof /mnt/serverb_nfs/"
 read -sp '' promptvar
 echo ''
