@@ -71,6 +71,7 @@ echo ''
 chmod 755 /srv/project*
 echo ''
 
+echo '' >> /etc/exports
 echo '/srv/project1 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
 echo '/srv/project2 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
 echo '/srv/project3 192.168.122.0/24(rw,sync,no_root_squash)' >> /etc/exports
