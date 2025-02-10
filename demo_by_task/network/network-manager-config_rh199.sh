@@ -84,10 +84,10 @@ echo ''
 nmcli conn show
 echo ''
 
-echo -n "ifconfig $DEVICE"
+echo -n "nmcli conn show demo1 | grep -i ipaddresses"
 read -sp '' promptvar
 echo ''
-ifconfig $DEVICE
+nmcli conn show demo1 | grep -i ipaddresses
 echo ''
 
 echo -n "nmcli conn up $DEVICE"
