@@ -30,4 +30,20 @@ echo ''
 anacron -fnd
 echo ''
 
+echo -n 'ls -l /etc/cron.daily/log-datetime.sh'
+read -sp '' promptvar
+echo ''
+ls -l /etc/cron.daily/log-datetime.sh
+echo ''
 
+echo -n 'cat /etc/cron.daily/log-datetime.sh'
+read -sp '' promptvar
+echo ''
+cat /etc/cron.daily/log-datetime.sh
+echo ''
+
+echo -n 'cat /usr/tmp/mydate.log'
+read -sp '' promptvar
+echo ''
+cat /usr/tmp/mydate.log
+echo ''
