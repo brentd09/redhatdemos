@@ -72,7 +72,7 @@ sudo mv ~/index.html /var/www/html
 echo ''
 
 echo Access the Apache web site
-echo -n 'curl localhost;
+echo -n 'curl localhost'
 read -sp '' promptvar
 echo ''
 curl localhost
