@@ -53,10 +53,10 @@ echo ''
 nmcli conn show
 echo ''
 
-echo -n "nmcli conn show demo1 | grep -i 'ipv4\.addresses'"
+echo -n "hostname -I"
 read -sp '' promptvar
 echo ''
-nmcli conn show demo1 | grep -i 'ipv4\.addresses'
+hostname -I
 echo ''
 
 
@@ -66,16 +66,10 @@ echo ''
 nmcli connection mod demo1 +ipv4.addresses 10.12.13.14
 echo ''
 
-echo -n "nmcli conn show demo1 | grep -i 'ipv4\.addresses'"
+echo -n "hostname -I"
 read -sp '' promptvar
 echo ''
-nmcli conn show demo1 | grep -i 'ipv4\.addresses'
-echo ''
-
-echo -n "hostname -i"
-read -sp '' promptvar
-echo ''
-hostname -i
+hostname -I
 echo ''
 
 echo -n "nmcli connection mod demo1 -ipv4.addresses 10.12.13.14 "
@@ -84,10 +78,10 @@ echo ''
 nmcli connection mod demo1 -ipv4.addresses 10.12.13.14
 echo ''
 
-echo -n "nmcli conn show demo1 | grep -i 'ipv4\.addresses'"
+echo -n "hostname -I"
 read -sp '' promptvar
 echo ''
-nmcli conn show demo1 | grep -i 'ipv4\.addresses'
+hostname -I
 echo ''
 
 echo -n "nmcli conn up $DEVICE"
@@ -109,10 +103,10 @@ echo ''
 nmcli conn show $DEVICE | grep -i 'ipv4\.addresses'
 echo ''
 
-echo -n "hostname -i"
+echo -n "hostname -I"
 read -sp '' promptvar
 echo ''
-hostname -i
+hostname -I
 echo ''
 
 
