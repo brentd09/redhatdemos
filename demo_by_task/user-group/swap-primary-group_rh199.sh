@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 echo -n 'newgrp wheel root'
 read -sp '' promptvar
 echo ''
@@ -11,6 +11,7 @@ echo''
 newgrp wheel student
 
 
+echo ''
 echo -n 'id'
 read -sp '' promptvar
 echo ''
