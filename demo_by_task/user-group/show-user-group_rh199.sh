@@ -10,7 +10,7 @@ useradd demouser
 echo -n "id demouser"
 read -sp '' promptvar
 echo ''
-id devops
+id demouser
 echo ''
 
 echo -n "ls -ld ~demouser/Downloads"
