@@ -20,6 +20,8 @@ systemctl enable --now httpd
 echo ''
 
 echo 'Brents test website' > /var/www/html/index.html
+
+echo "Change the port number from 80 to 8078"
 echo -n "vi /etc/httpd/conf/httpd.conf"
 read -sp '' promptvar
 echo ''
