@@ -103,6 +103,12 @@ echo ''
 nmcli conn show $DEVICE | grep -i 'ipv4\.addresses'
 echo ''
 
+echo -n "hostname -i"
+read -sp '' promptvar
+echo ''
+hostname -i
+echo ''
+
 
 echo -n "nmcli conn delete demo1"
 read -sp '' promptvar
