@@ -30,8 +30,3 @@ echo ''
 cat /usr/lib/systemd/system/graphical.target
 echo ''
 
-echo -n "systemctl isolate multi-user.target"
-read -sp '' promptvar
-echo ''
-systemctl isolate multi-user.target
-echo ''
