@@ -34,10 +34,10 @@ echo ''
 systemctl
 echo ''
 
-echo -n "systemctl list-unit-filess --type=service"
+echo -n "systemctl list-unit-files --type=service"
 read -sp '' promptvar
 echo ''
-systemctl list-unit-filess --type=service
+systemctl list-unit-files --type=service
 echo ''
 
 echo -n "systemctl status httpd"
