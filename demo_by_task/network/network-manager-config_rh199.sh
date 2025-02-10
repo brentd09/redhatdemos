@@ -29,10 +29,10 @@ echo ''
 nmcli conn show
 echo ''
 
-echo -n "nmcli connection add con-name demo1 ipv4.addresses $NEWIP ipv4.dns $DNSIP connection.interface-name $DEVICE type ethernet"
+echo -n "nmcli connection add con-name demo1 ipv4.addresses $NEXTIP ipv4.dns $DNSIP connection.interface-name $DEVICE type ethernet"
 read -sp '' promptvar
 echo ''
-nmcli connection add con-name demo1 ipv4.addresses $NEWIP ipv4.dns $DNSIP connection.interface-name $DEVICE type ethernet
+nmcli connection add con-name demo1 ipv4.addresses $NEXTIP ipv4.dns $DNSIP connection.interface-name $DEVICE type ethernet
 echo ''
 
 echo -n "nmcli conn show"
