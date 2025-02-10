@@ -85,3 +85,9 @@ read -sp '' promptvar
 echo ''
 podman run -d -p 8080:80 --name demo_container_rh134 localhost/demo_image_rh134:latest
 echo ''
+
+echo -n "curl localhost:8080"
+read -sp '' promptvar
+echo ''
+curl localhost:8080
+echo ''
