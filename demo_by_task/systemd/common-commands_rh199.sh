@@ -2,14 +2,9 @@
 
 me=$(whoami)
 if [[ $me != root ]];then
-  echo 'Usage: Must be run as root on serverb'
+  echo 'Usage: Must be run as root'
 fi
 
-this_machine=$(hostname)
-if [[ $this_machine != servera ]];then
-  echo 'Usage: Must be run as root on servera'
-  exit1
-fi
 
 echo 'Installing httpd'
 dnf install -y httpd
