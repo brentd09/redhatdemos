@@ -53,10 +53,10 @@ echo ''
 nmcli conn show
 echo ''
 
-echo -n "ifconfig $DEVICE"
+echo -n "nmcli conn show demo1 | grep -i 'ipv4\.addresses'"
 read -sp '' promptvar
 echo ''
-ifconfig $DEVICE
+nmcli conn show demo1 | grep -i 'ipv4\.addresses'
 echo ''
 
 
@@ -64,24 +64,6 @@ echo -n "nmcli connection mod demo1 +ipv4.addresses 10.12.13.14 "
 read -sp '' promptvar
 echo ''
 nmcli connection mod demo1 +ipv4.addresses 10.12.13.14
-echo ''
-
-echo -n "nmcli conn show"
-read -sp '' promptvar
-echo ''
-nmcli conn show
-echo ''
-
-echo -n "nmcli conn up demo1"
-read -sp '' promptvar
-echo ''
-nmcli conn up demo1
-echo ''
-
-echo -n "nmcli conn show"
-read -sp '' promptvar
-echo ''
-nmcli conn show
 echo ''
 
 echo -n "nmcli conn show demo1 | grep -i 'ipv4\.addresses'"
