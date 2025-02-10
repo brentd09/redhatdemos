@@ -13,12 +13,10 @@ echo ''
 id demouser
 echo ''
 
-su - demouser
-
-echo -n "ls -ld ~demouser/Downloads"
+echo -n "ls -ld ~demouser"
 read -sp '' promptvar
 echo ''
-ls -ld ~demouser/Downloads
+ls -ld ~demouser
 echo ''
 
 
