@@ -2,13 +2,7 @@
 
 me=$(whoami)
 if [[ $me != root ]];then
-  echo 'Usage: Must be run as root on serverb'
-fi
-
-this_machine=$(hostname)
-if [[ $this_machine != servera ]];then
-  echo 'Usage: Must be run as root on servera'
-  exit1
+  echo 'Usage: Must be run as root'
 fi
 
 echo -n "systemctl get-default"
