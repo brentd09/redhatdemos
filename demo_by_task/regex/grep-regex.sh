@@ -47,6 +47,12 @@ echo ''
 grep -iP '(?<=joined )the' linux-poem.txt
 echo ''
 
+echo -n "grep -v '^$' linux-poem.txt"
+read -sp '' promptvar
+echo ''
+grep -v '^$' linux-poem.txt
+echo ''
+
 echo -n "grep -iv 'a' linux-poem.txt"
 read -sp '' promptvar
 echo ''
