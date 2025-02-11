@@ -29,10 +29,16 @@ echo ''
 grep '.' linux-poem.txt
 echo ''
 
-echo -n "grep '.' linux-poem.txt"
+echo -n "grep '.$' linux-poem.txt"
 read -sp '' promptvar
 echo ''
-grep '.' linux-poem.txt
+grep '.$' linux-poem.txt
+echo ''
+
+echo -n "grep '\.$' linux-poem.txt"
+read -sp '' promptvar
+echo ''
+grep '\.$' linux-poem.txt
 echo ''
 
 echo -n "grep -iP '(?<=joined )the' linux-poem.txt"
