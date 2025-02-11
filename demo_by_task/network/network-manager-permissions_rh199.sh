@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo 'Simulate running the nmcli command as the student user'
 echo -n "sudo -u student -i nmcli gen permissions"
 read -sp '' promptvar
 echo ''
