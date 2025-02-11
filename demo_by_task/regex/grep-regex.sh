@@ -47,8 +47,8 @@ echo ''
 grep -iP '(?<=joined )the' linux-poem.txt
 echo ''
 
-echo -n "grep -iv 'code' linux-poem.txt"
+echo -n "grep -iv 'a' linux-poem.txt"
 read -sp '' promptvar
 echo ''
-grep -iv 'code' linux-poem.txt
+grep -iv 'a' linux-poem.txt
 echo ''
