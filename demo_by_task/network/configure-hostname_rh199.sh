@@ -35,10 +35,10 @@ echo ''
 cat /etc/hosts
 echo ''
 
-echo -n "cat resolv.conf"
+echo -n "cat /etc/resolv.conf"
 read -sp '' promptvar
 echo ''
-cat resolv.conf
+cat /etc/resolv.conf
 echo ''
 
 echo -n "dig serverb"
