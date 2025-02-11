@@ -8,10 +8,10 @@ echo ''
 ls -l /etc/NetworkManager/system-connections
 echo ''
 
-echo -n "nmcli conn add con-name demo2 ipv4.addresses 192.168.10.111 ipv4.dns 192.168.10.1 connection.interface-name $DEVICE type ethernet"
+echo -n "nmcli conn add con-name demo2 ipv4.addresses 192.168.10.111 ipv4.dns 192.168.10.1 ipv4.method manual connection.interface-name $DEVICE type ethernet"
 read -sp '' promptvar
 echo ''
-nmcli conn add con-name demo2 ipv4.addresses 192.168.10.111 ipv4.dns 192.168.10.1 connection.interface-name $DEVICE type ethernet
+nmcli conn add con-name demo2 ipv4.addresses 192.168.10.111 ipv4.dns 192.168.10.1 ipv4.method manual connection.interface-name $DEVICE type ethernet
 echo ''
 
 echo -n "ls -l /etc/NetworkManager/system-connections"
