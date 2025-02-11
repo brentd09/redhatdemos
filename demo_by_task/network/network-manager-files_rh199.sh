@@ -1,9 +1,7 @@
 #!/bin/bash
 
 DEVICE=$(nmcli device show | grep GENERAL.DEVICE | grep -Pv 'blob$' | awk '{print $2}' )
-IPADDR=$(ip addr show $DEVICE | grep -P 'binetb' | head -n 1 | awk '{print $2}')
-DEFGW=$(ip route | grep default | awk '{print $3}' )
-DNSIP=$(nmcli device show $DEVICE | grep DNS | head -n 1 | awk '{print $2}')
+
 
 
 echo -n "ls -l /etc/NetworkManager/system-connections"
