@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVICE=$(nmcli device show | grep GENERAL.DEVICE | grep -Pv 'blob' | awk '{print $2}' )
+DEVICE=$(nmcli device show | grep GENERAL.DEVICE | grep -Pv '\blo\b' | awk '{print $2}' )
 
 echo -n "ls -l /etc/NetworkManager/system-connections"
 read -sp '' promptvar
