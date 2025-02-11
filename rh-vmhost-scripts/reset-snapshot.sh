@@ -6,5 +6,5 @@ for vm in $vmnames; do
   for snap in $snaps; do
     virsh snapshot-delete --domain $vm --snapshotname $snap
   done
-  virsh snapshot-create-as --domain $vm --name ReadyForLabs --description $now  --atomic 
+  virsh snapshot-create-as --domain $vm --name ReadyForLabs --atomic 
 done  
