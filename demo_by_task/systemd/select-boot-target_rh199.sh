@@ -31,7 +31,7 @@ cat /usr/lib/systemd/system/graphical.target
 echo ''
 
 echo 'List the four common boot targets'
-echo -n "systemctl list-unit-files --type=target grep -P '(graph|multi|emer|resc)' | awk '{print $1}' | tr '\n' ' ' | awk {\$2"\n"\$3"\n"\$4"\n"\$1"\n"} "
+echo -n "systemctl list-unit-files --type=target grep -P '(graph|multi|emer|resc)' | awk '{print $1}' | tr '\n' ' ' | awk {$2\"\n\"$3\"\n\"$4\"\n\"$1\"\n\"} "
 read -sp '' promptvar
 echo ''
 systemctl list-unit-files --type=target grep -P '(graph|multi|emer|resc)' | awk '{print $1}' | tr '\n' ' ' | awk {$2\"\n\"$3\"\n\"$4\"\n\"$1\"\n\"}  
