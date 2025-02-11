@@ -31,3 +31,9 @@ read -sp '' promptvar
 echo ''
 nmcli conn delete demo2
 echo ''
+
+echo -n "ls -l /etc/NetworkManager/system-connections"
+read -sp '' promptvar
+echo ''
+ls -l /etc/NetworkManager/system-connections
+echo ''
