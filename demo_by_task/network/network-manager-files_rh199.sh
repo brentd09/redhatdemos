@@ -25,3 +25,9 @@ read -sp '' promptvar
 echo ''
 vi /etc/NetworkManager/system-connections/demo2.nmconnection
 echo ''
+
+echo -n "nmcli conn delete demo2"
+read -sp '' promptvar
+echo ''
+nmcli conn delete demo2
+echo ''
