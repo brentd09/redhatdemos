@@ -2,12 +2,6 @@
 
 DEVICE=$(nmcli device show | grep GENERAL.DEVICE | grep -Pv 'blob' | awk '{print $2}' )
 
-echo $DEVICE
-
-read -sp ''
-
-
-
 echo -n "ls -l /etc/NetworkManager/system-connections"
 read -sp '' promptvar
 echo ''
