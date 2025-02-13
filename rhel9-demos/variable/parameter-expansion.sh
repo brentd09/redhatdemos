@@ -13,7 +13,8 @@
 #     ${var:start:length}: Expands to a substring of var, starting from start and extending for length.
 #   Length Expansion
 #     ${#var}:             Expands to the length of var.
-#   Pattern Removal
+#   # !!! Patterns in the pattern examples are wildard patterns and (NOT regex patterns)
+#   Pattern Removal 
 #     ${var#pattern}:      Removes the shortest matching prefix pattern from var.
 #     ${var##pattern}:     Removes the longest matching prefix pattern from var.
 #     ${var%pattern}:      Removes the shortest matching suffix pattern from var.
