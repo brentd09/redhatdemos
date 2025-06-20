@@ -17,6 +17,6 @@ ssh servera exportfs
 # setup the nfs client to do indirect wildcard
 dnf install -y autofs
 systemctl enable autofs
-echo 'my_projects    /etc/auto_projects_.autofs' > /etc/auto.master.d/auto_master_projects.autofs
+echo '/my_projects    /etc/auto_projects_.autofs' > /etc/auto.master.d/auto_master_projects.autofs
 echo '*    -fstype=nfs,rw    servera:/new_projects/&' > /etc/auto_projects.autofs
 systemctl start autofs
