@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set up servera as an NFS server with two NFS shares
-sudo -i
+
 ssh servera firewall-cmd --zone=public --add-service=mountd
 ssh servera firewall-cmd --zone=public --add-service=nfs
 ssh servera firewall-cmd --runtime-to-permanent
@@ -18,5 +18,5 @@ ssh servera exportfs
 dnf install -y autofs
 systemctl enable autofs
 echo 'my_projects    /etc/auto_projects_.autofs' > /etc/auto.master.d/auto_master_projects.autofs
-echo '*    -fstype=nfs,rw    servera:/new_projects/&' > /etc/auto_projects_.autofs
+echo '*    -fstype=nfs,rw    servera:/new_projects/&' > /etc/auto_projects.autofs
 systemctl start autofs
