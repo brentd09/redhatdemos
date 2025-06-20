@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set up servera as an NFS server with two NFS shares
-
+rm ~/.ssh/known-hosts
 ssh servera firewall-cmd --zone=public --add-service=mountd
 ssh servera firewall-cmd --zone=public --add-service=nfs
 ssh servera firewall-cmd --runtime-to-permanent
