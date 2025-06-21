@@ -30,4 +30,7 @@ systemctl daemon-reexec
 systemctl daemon-reload
 systemctl enable --now log-time.timer
 
-tail /tmp/systemd-timer-demo.log
+
+clear
+echo Waiting one minute before checking the log file
+tail -f /tmp/systemd-timer-demo.log
