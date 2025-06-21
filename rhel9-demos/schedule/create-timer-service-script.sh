@@ -33,4 +33,5 @@ systemctl enable --now log-time.timer
 
 clear
 echo Waiting one minute before checking the log file
+sleep 62
 tail -f /tmp/systemd-timer-demo.log
