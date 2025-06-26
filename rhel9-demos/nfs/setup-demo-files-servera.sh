@@ -41,12 +41,12 @@ done
 
 dnf -y install nfs-utils
 
-echo '/shares/public/readme          172.25.250.0/24(rw)' > /etc/exports
-echo '/shares/it/readme              172.25.250.0/24(rw)' >> /etc/exports
-echo '/shares/admin/readme           172.25.250.0/24(rw)' >> /etc/exports
-echo '/projects/project1/readme      172.25.250.0/24(rw)' >> /etc/exports
-echo '/projects/project2/readme      172.25.250.0/24(rw)' >> /etc/exports
-echo '/projects/project3/readme      172.25.250.0/24(rw)' >> /etc/exports
+echo '/shares/public          172.25.250.0/24(rw)' > /etc/exports
+echo '/shares/it              172.25.250.0/24(rw)' >> /etc/exports
+echo '/shares/admin           172.25.250.0/24(rw)' >> /etc/exports
+echo '/projects/project1      172.25.250.0/24(rw)' >> /etc/exports
+echo '/projects/project2      172.25.250.0/24(rw)' >> /etc/exports
+echo '/projects/project3      172.25.250.0/24(rw)' >> /etc/exports
 
 systemctl enable --now nfs-server
 exportfs -rav
