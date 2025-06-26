@@ -50,3 +50,9 @@ echo '/projects/project3      172.25.250.0/24(rw)' >> /etc/exports
 
 systemctl enable --now nfs-server
 exportfs -rav
+
+# Configure firewall to allow nfs and mountd services
+active_zone=$(firewall-cmd --get-active-zones | grep -B 1 interfaces | head -n 1 )
+for svc in nfs mountd; do
+  firewall-cmd  --zone=$active_zone --add-service=$svc
+done  
