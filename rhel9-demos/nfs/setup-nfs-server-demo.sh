@@ -56,3 +56,4 @@ active_zone=$(firewall-cmd --get-active-zones | grep -B 1 interfaces | head -n 1
 for svc in nfs mountd; do
   firewall-cmd  --zone=$active_zone --add-service=$svc
 done  
+firewall-cmd --runtime-to-permanent
